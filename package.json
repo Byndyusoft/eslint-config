@@ -31,6 +31,6 @@
     }
   },
   "lint-staged": {
-    "*.js": ["prettier --check"]
+    "*.js": ["prettier --check --config .prettierrc"]
   }
 }
