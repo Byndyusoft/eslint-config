@@ -2,5 +2,14 @@
   "singleQuote": true,
   "tabWidth": 4,
   "trailingComma": "none",
-  "printWidth": 120
+  "printWidth": 120,
+  "overrides": [
+    {
+      "files": ["*.json", ".prettierrc"],
+      "options": {
+        "tabWidth": 2,
+        "parser": "json"
+      }
+    }
+  ]
 }
