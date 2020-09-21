@@ -16,9 +16,15 @@
     "eslint-config"
   ],
   "author": "Byndyusoft",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Byndyusoft/eslint-config/issues"
   },
-  "homepage": "https://github.com/Byndyusoft/eslint-config#readme"
+  "homepage": "https://github.com/Byndyusoft/eslint-config#readme",
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  }
 }
