@@ -30,6 +30,9 @@ $ npm i eslint @byndyusoft/eslint-config --save-dev
     "@byndyusoft/eslint-config/typescript",
     "@byndyusoft/eslint-config/react",
     "@byndyusoft/eslint-config/jest"
-  ]
+  ],
+  "parserOptions": {
+    "project": "tsconfig.json"
+  }
 }
 ```
