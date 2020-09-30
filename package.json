@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/Byndyusoft/eslint-config.git"
   },
-  "keywords": ["byndyusoft", "eslint", "eslint-config"],
+  "keywords": [
+    "byndyusoft",
+    "eslint",
+    "eslint-config"
+  ],
   "author": "Byndyusoft",
   "publishConfig": {
     "access": "public"
@@ -31,6 +35,8 @@
     }
   },
   "lint-staged": {
-    "*.js": ["prettier --write"]
+    "*.js": [
+      "prettier --write"
+    ]
   }
 }
