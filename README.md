@@ -39,7 +39,5 @@ $ npm i eslint @byndyusoft/eslint-config --save-dev
 
 ### TODO
 
-- [ ] `react` (wip)
-- [ ] `import`
 - [ ] `flowtype`
 - [ ] `node`
