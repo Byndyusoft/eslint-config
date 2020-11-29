@@ -23,15 +23,26 @@ module.exports = {
         }
     ],
     rules: {
-        'react/boolean-prop-naming': [
-            // Правило не работает :((
-            'error',
-            {
-                rule: '^[A-Z]([A-Za-z0-9]?)+' //'^(is|has|can)[A-Z]([A-Za-z0-9]?)+'
-            }
-        ],
+        // 'react/boolean-prop-naming': [ Правило не работает :((
+        //     'warn',
+        //     {
+        //         propTypeNames: ['boolean'],
+        //         rule: '^(is|has|can)[A-Z]([A-Za-z0-9]?)+'
+        //     }
+        // ],
         'react/button-has-type': 'error',
         'react/default-props-match-prop-types': 'error',
+        'react/forbid-dom-props': [
+            'warn',
+            {
+                forbid: [
+                    {
+                        propName: 'style',
+                        message: 'Avoid using inline styles'
+                    }
+                ]
+            }
+        ],
         'react/forbid-component-props': [
             'warn',
             {
@@ -46,7 +57,7 @@ module.exports = {
         'react/forbid-foreign-prop-types': 'warn',
         'react/forbid-prop-types': 'error',
         'react/no-access-state-in-setstate': 'error',
-        'react/no-array-index-key': 'error',
+        'react/no-array-index-key': 'warn',
         'react/no-danger': 'error',
         'react/no-multi-comp': [
             'error',
@@ -92,7 +103,6 @@ module.exports = {
                 allowArrowFunctions: true
             }
         ],
-        // 'react/jsx-no-constructed-context-values': 'error', Ошибка при проверке правила
         'react/jsx-no-script-url': 'error',
         'react/jsx-no-target-blank': 'warn',
         'react/jsx-no-useless-fragment': 'warn',
