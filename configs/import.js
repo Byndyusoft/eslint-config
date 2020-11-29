@@ -2,6 +2,17 @@ module.exports = {
     extends: ['plugin:import/errors', 'plugin:import/warnings'],
     plugins: ['import'],
     rules: {
+        'import/extensions': [
+            'warn',
+            'always',
+            {
+                js: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+                json: 'never'
+            }
+        ],
         'import/first': 'warn',
         'import/no-cycle': 'error',
         'import/no-mutable-exports': 'error',
