@@ -18,6 +18,7 @@ module.exports = {
         {
             files: ['*.ts', '*.tsx'],
             rules: {
+                'react/require-default-props': 'off',
                 'react/prop-types': 'off'
             }
         }
