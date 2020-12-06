@@ -23,6 +23,7 @@ module.exports = {
         'unicorn/prefer-number-properties': 'off',
         'unicorn/prefer-replace-all': 'error',
         'unicorn/prefer-set-has': 'warn',
+        'unicorn/prefer-ternary': 'warn',
         'unicorn/prevent-abbreviations': [
             'warn',
             {
