@@ -5,7 +5,7 @@ module.exports = {
     extends: [
         'eslint:recommended',
         './configs/best-practices.js',
-        './configs/ecmascript.js',
+        './configs/ecmascript-6.js',
         './configs/errors.js',
         './configs/variables.js',
         './configs/import.js'
