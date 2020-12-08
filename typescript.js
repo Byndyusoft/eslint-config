@@ -77,6 +77,18 @@ module.exports = {
                 '@typescript-eslint/no-explicit-any': 'error',
                 '@typescript-eslint/no-floating-promises': 'warn',
                 '@typescript-eslint/no-invalid-void-type': 'error',
+                'no-magic-numbers': 'off',
+                '@typescript-eslint/no-magic-numbers': [
+                    'warn',
+                    {
+                        ignore: [-1, 0, 1],
+                        ignoreArrayIndexes: true,
+                        ignoreDefaultValues: true,
+                        ignoreEnums: true,
+                        ignoreNumericLiteralTypes: true,
+                        ignoreReadonlyClassProperties: true
+                    }
+                ],
                 'no-shadow': 'off',
                 '@typescript-eslint/no-shadow': 'error',
                 '@typescript-eslint/no-throw-literal': 'error',
