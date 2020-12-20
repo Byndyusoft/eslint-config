@@ -46,8 +46,9 @@ $ npm i eslint @byndyusoft/eslint-config --save-dev
   "extends": [
     "@byndyusoft/eslint-config/javascript",
     "@byndyusoft/eslint-config/flow",
+    "@byndyusoft/eslint-config/jest",
     "@byndyusoft/eslint-config/react",
-    "@byndyusoft/eslint-config/jest"
+    "@byndyusoft/eslint-config/react-testing"
   ]
 }
 ```
@@ -58,8 +59,9 @@ $ npm i eslint @byndyusoft/eslint-config --save-dev
 {
   "extends": [
     "@byndyusoft/eslint-config/typescript",
+    "@byndyusoft/eslint-config/jest",
     "@byndyusoft/eslint-config/react",
-    "@byndyusoft/eslint-config/jest"
+    "@byndyusoft/eslint-config/react-testing"
   ],
   "parserOptions": {
     "project": "tsconfig.json"
