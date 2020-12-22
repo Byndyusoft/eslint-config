@@ -72,4 +72,4 @@ $ npm i eslint @byndyusoft/eslint-config --save-dev
 ### TODO
 
 - [ ] `flowtype`
-- [ ] `node`
+- [X] `node`
