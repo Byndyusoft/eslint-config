@@ -1,6 +1,6 @@
 {
   "name": "@byndyusoft/eslint-config",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "ESLint config for Byndyusoft projects",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/Byndyusoft/eslint-config.git"
   },
-  "keywords": ["byndyusoft", "eslint", "eslint-config"],
+  "keywords": [
+    "byndyusoft",
+    "eslint",
+    "eslint-config"
+  ],
   "author": "Byndyusoft",
   "publishConfig": {
     "access": "public"
@@ -31,7 +35,9 @@
     }
   },
   "lint-staged": {
-    "*.js": ["prettier --write"]
+    "*.js": [
+      "prettier --write"
+    ]
   },
   "peerDependencies": {
     "eslint": "^7.10.0"
