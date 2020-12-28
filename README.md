@@ -24,6 +24,16 @@ $ npm i eslint @byndyusoft/eslint-config --save-dev
 }
 ```
 
+**package.json**
+
+```json
+{
+  "engines": {
+    "node": ">=8.10.0"
+  }
+}
+```
+
 ### Node + Typescript + Jest
 
 ```json
@@ -35,6 +45,16 @@ $ npm i eslint @byndyusoft/eslint-config --save-dev
   ],
   "parserOptions": {
     "project": "tsconfig.json"
+  }
+}
+```
+
+**package.json**
+
+```json
+{
+  "engines": {
+    "node": ">=8.10.0"
   }
 }
 ```
