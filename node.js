@@ -15,5 +15,19 @@ module.exports = {
         'node/callback-return': 'error',
         'node/prefer-promises/fs': 'error',
         'node/prefer-promises/dns': 'error'
-      }
+    },
+    overrides: [
+        {
+          files: ['*.ts'],
+          rules: {
+            'node/no-missing-import': [
+                'error',
+                {
+                    tryExtensions: ['.ts', '.js', '.json', '.node']
+                }
+            ],
+            'node/no-unsupported-features/es-syntax': 'off'
+          }
+        }
+    ]
 };
