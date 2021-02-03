@@ -111,6 +111,13 @@ module.exports = {
                 '@typescript-eslint/switch-exhaustiveness-check': 'error',
                 '@typescript-eslint/unified-signatures': 'error'
             }
+        },
+        {
+            files: ['*.{spec, test, tests, stories}.*', '**/__tests__/**', '**/__stories__/**'],
+            rules: {
+                '@typescript-eslint/no-magic-numbers': 'off',
+                '@typescript-eslint/unbound-method': 'off'
+            }
         }
     ]
 };
