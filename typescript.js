@@ -113,7 +113,7 @@ module.exports = {
             }
         },
         {
-            files: ['*.{spec, test, tests}.*', '**/__tests__/**'],
+            files: ['*.{spec, test, tests, stories}.*', '**/__tests__/**', '**/__stories__/**'],
             rules: {
                 '@typescript-eslint/no-magic-numbers': 'off',
                 '@typescript-eslint/unbound-method': 'off'
