@@ -76,7 +76,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['**/__tests__/**', '**/__stories__/**', '**/__fixtures__/**', '*.test.*', '*.spec.*', '*.tests.*'],
+            files: ['*.{spec, test, tests, stories}.*', '**/__tests__/**', '**/__stories__/**'],
             rules: {
                 'no-magic-numbers': 'off'
             }
