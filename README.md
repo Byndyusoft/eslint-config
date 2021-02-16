@@ -9,6 +9,8 @@ $ npm i eslint --save-dev
 $ npm i eslint @byndyusoft/eslint-config --save-dev
 ```
 
+Note: If you have React project created with create-react-app, then you haven't install eslint manually, because it comes with react-scripts. Otherwise it won't let you run eslint until you remove it from `package.json`.
+
 
 ## Usage
 
