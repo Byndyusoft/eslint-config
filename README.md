@@ -5,7 +5,6 @@
 ## Install
 
 ```shell script
-$ npm i eslint --save-dev
 $ npm i eslint @byndyusoft/eslint-config --save-dev
 ```
 
@@ -89,6 +88,32 @@ Note: If you have React project created with create-react-app, then you haven't 
     "project": "tsconfig.json"
   }
 }
+```
+
+### CSS Modules
+For appropriate working with react css modules you have to add type like this
+```js
+declare module '*.css' {
+    const styles: { [className: string]: string };
+    export default styles;
+}
+```
+
+### Webpack assets
+For appropriate working with  assets imported into component you have to add type like this
+```js
+declare module '*.png'
+{
+    const content: string;
+    export default    content;
+}
+
+declare module '*.svg'
+{
+    const content: string;
+    export default content;
+}
+
 ```
 
 ### TODO
