@@ -36,14 +36,6 @@ module.exports = {
         'no-labels': 'error',
         'no-lone-blocks': 'error',
         'no-loop-func': 'error',
-        'no-magic-numbers': [
-            'warn',
-            {
-                ignore: [-1, 0, 1],
-                ignoreArrayIndexes: true,
-                ignoreDefaultValues: true
-            }
-        ],
         'no-multi-spaces': 'warn',
         'no-new-func': 'error',
         'no-new-wrappers': 'error',
@@ -73,13 +65,5 @@ module.exports = {
                 exceptRange: true
             }
         ]
-    },
-    overrides: [
-        {
-            files: ['*.{spec, test, tests, stories}.*', '**/__tests__/**', '**/__stories__/**'],
-            rules: {
-                'no-magic-numbers': 'off'
-            }
-        }
-    ]
+    }
 };

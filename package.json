@@ -10,11 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Byndyusoft/eslint-config.git"
   },
-  "keywords": [
-    "byndyusoft",
-    "eslint",
-    "eslint-config"
-  ],
+  "keywords": ["byndyusoft", "eslint", "eslint-config"],
   "author": "Byndyusoft",
   "publishConfig": {
     "access": "public"
@@ -25,9 +21,9 @@
   },
   "homepage": "https://github.com/Byndyusoft/eslint-config#readme",
   "devDependencies": {
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2"
+    "husky": "^4.3.8",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
   },
   "husky": {
     "hooks": {
@@ -35,27 +31,6 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write"
-    ]
-  },
-  "peerDependencies": {
-    "eslint": "^7.10.0"
-  },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.3.0",
-    "@typescript-eslint/parser": "^4.3.0",
-    "eslint": "^7.10.0",
-    "eslint-plugin-flowtype": "^5.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.0.2",
-    "eslint-plugin-jest-dom": "^3.3.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-react": "^7.21.2",
-    "eslint-plugin-react-hooks": "^4.1.2",
-    "eslint-plugin-sonarjs": "^0.5.0",
-    "eslint-plugin-testing-library": "^3.10.1",
-    "eslint-plugin-unicorn": "^23.0.0"
+    "*.js": ["prettier --write"]
   }
 }
