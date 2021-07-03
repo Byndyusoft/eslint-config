@@ -1,11 +1,11 @@
 module.exports = {
     extends: [
         './typescript.js',
-        './typescript-style-back.js',
+        './typescript-style-backend.js',
         './node.js',
         './advanced.js',
         './jest.js',
-        './jest-style-back.js',
+        './jest-style-backend.js',
         'plugin:prettier/recommended'
     ],
     overrides: [

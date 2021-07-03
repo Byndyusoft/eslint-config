@@ -22,7 +22,7 @@ yarn add -D eslint @byndyusoft/eslint-config
 
 Note: If you have React project created with create-react-app, then you haven't install eslint manually, because it comes with react-scripts. Otherwise it won't let you run eslint until you remove it from `package.json`.
 
-### Quick install `back` config
+### Quick install `backend` config
 
 Install config dependencies:
 
@@ -47,7 +47,7 @@ Create ESLint config:
 ```json
 {
   "root": true,
-  "extends": ["@byndyusoft/eslint-config/back"]
+  "extends": ["@byndyusoft/eslint-config/backend"]
 }
 ```
 
@@ -61,7 +61,7 @@ Add engines information to your `package.json`:
 }
 ```
 
-### Quick install `front` config
+### Quick install `frontend` config
 
 Install config dependencies:
 
@@ -85,7 +85,7 @@ Create ESLint config:
 ```json
 {
   "root": true,
-  "extends": ["@byndyusoft/eslint-config/front"]
+  "extends": ["@byndyusoft/eslint-config/frontend"]
 }
 ```
 
@@ -101,25 +101,25 @@ Common:
 | [jest](./jest.js)             | N/A          | `eslint-plugin-jest@24`                                                                                    |
 | [stylistic](./stylistic.js)   | N/A          | N/A                                                                                                        |
 
-Back:
+Backend:
 
-| Configs                                             | Extends from                                                                        | Use together with | Dependencies\*                                         |
-| --------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------ |
-| [back](./back.js)                                   | `typescript`,`typescript-style-back`, `node`, `advanced`, `jest`, `jest-style-back` | N/A               | `eslint-plugin-prettier@3`, `eslint-config-prettier@8` |
-| [typescript-style-back](./typescript-style-back.js) | N/A                                                                                 | `typescript`      | `eslint-plugin-simple-import-sort@7`                   |
-| [node](./node.js)                                   | N/A                                                                                 | N/A               | `eslint-plugin-node@11`                                |
-| [jest-style-back](./jest-style-back.js)             | N/A                                                                                 | `jest`            | N/A                                                    |
+| Configs                                                   | Extends from                                                                              | Use together with | Dependencies\*                                         |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------ |
+| [backend](./backend.js)                                   | `typescript`,`typescript-style-backend`, `node`, `advanced`, `jest`, `jest-style-backend` | N/A               | `eslint-plugin-prettier@3`, `eslint-config-prettier@8` |
+| [typescript-style-backend](./typescript-style-backend.js) | N/A                                                                                       | `typescript`      | `eslint-plugin-simple-import-sort@7`                   |
+| [node](./node.js)                                         | N/A                                                                                       | N/A               | `eslint-plugin-node@11`                                |
+| [jest-style-backend](./jest-style-backend.js)             | N/A                                                                                       | `jest`            | N/A                                                    |
 
-Front:
+Frontend:
 
-| Configs                                               | Extends from                                                                                 | Use together with | Dependencies\*                                                                     |
-| ----------------------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------- |
-| [front](./front.js)                                   | `typescript`, `typescript-style-front`, `jest`, `jest-style-front`, `react`, `react-testing` | N/A               | N/A                                                                                |
-| [flow](./flow.js)                                     | N/A                                                                                          | N/A               | `eslint-plugin-flowtype@5`                                                         |
-| [typescript-style-front](./typescript-style-front.js) | N/A                                                                                          | `typescript`      | N/A                                                                                |
-| [jest-style-front](./jest-style-front.js)             | N/A                                                                                          | `jest`            | N/A                                                                                |
-| [react](./react.js)                                   | N/A                                                                                          | N/A               | `eslint-plugin-react@7`, `eslint-plugin-react-hooks@4`, `eslint-plugin-jsx-a11y@6` |
-| [react-testing](./react-testing.js)                   | N/A                                                                                          | N/A               | `eslint-plugin-testing-library@3`, `eslint-plugin-jest-dom@3`                      |
+| Configs                                                     | Extends from                                                                                       | Use together with | Dependencies\*                                                                     |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------- |
+| [frontend](./frontend.js)                                   | `typescript`, `typescript-style-frontend`, `jest`, `jest-style-frontend`, `react`, `react-testing` | N/A               | N/A                                                                                |
+| [flow](./flow.js)                                           | N/A                                                                                                | N/A               | `eslint-plugin-flowtype@5`                                                         |
+| [typescript-style-frontend](./typescript-style-frontend.js) | N/A                                                                                                | `typescript`      | N/A                                                                                |
+| [jest-style-frontend](./jest-style-frontend.js)             | N/A                                                                                                | `jest`            | N/A                                                                                |
+| [react](./react.js)                                         | N/A                                                                                                | N/A               | `eslint-plugin-react@7`, `eslint-plugin-react-hooks@4`, `eslint-plugin-jsx-a11y@6` |
+| [react-testing](./react-testing.js)                         | N/A                                                                                                | N/A               | `eslint-plugin-testing-library@3`, `eslint-plugin-jest-dom@3`                      |
 
 Install config dependencies and add config to your ESLint config:
 

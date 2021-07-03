@@ -1,9 +1,9 @@
 module.exports = {
     extends: [
         './typescript.js',
-        './typescript-style-front.js',
+        './typescript-style-frontend.js',
         './jest.js',
-        './jest-style-front.js',
+        './jest-style-frontend.js',
         './react.js',
         './react-testing.js'
     ]
