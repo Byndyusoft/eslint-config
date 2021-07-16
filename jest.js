@@ -1,29 +1,14 @@
 module.exports = {
-    env: {
-        'jest/globals': true
-    },
-    extends: ['plugin:jest/recommended'],
-    plugins: ['jest'],
-    parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module'
-    },
-    settings: {
-        jest: {
-            version: 26
-        }
-    },
     overrides: [
         {
-            files: ['*.{spec, test, tests}.*', '**/__tests__/**'],
+            files: ['*{spec, test, tests}.*', '**/__tests__/**'],
+            extends: ['plugin:jest/recommended'],
+            env: {
+                'jest/globals': true
+            },
+            plugins: ['jest'],
             rules: {
-                'jest/consistent-test-it': [
-                    'error',
-                    {
-                        fn: 'test',
-                        withinDescribe: 'test'
-                    }
-                ],
+                // eslint-plugin-jest
                 'jest/no-duplicate-hooks': 'error',
                 'jest/no-test-return-statement': 'error',
                 'jest/prefer-called-with': 'warn',

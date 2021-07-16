@@ -13,7 +13,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['*.{spec, test, tests}.*', '**/__tests__/**', '**/__stories__/**', '**/__fixtures__/**'],
+            files: ['*{spec, test, tests}.*', '**/__tests__/**', '**/__stories__/**', '**/__fixtures__/**'],
             rules: {
                 'sonarjs/no-duplicate-string': 'off',
                 'sonarjs/no-identical-functions': 'off'

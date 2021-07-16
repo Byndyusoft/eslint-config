@@ -1,9 +1,5 @@
 /* https://eslint.org/docs/rules/#stylistic-issues */
 module.exports = {
-    parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module'
-    },
     rules: {
         'array-bracket-newline': ['warn', 'consistent'],
         'array-bracket-spacing': ['warn', 'never'],

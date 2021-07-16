@@ -10,9 +10,15 @@ module.exports = {
         './configs/variables.js',
         './configs/import.js'
     ],
-    parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module'
-    },
-    reportUnusedDisableDirectives: true
+    reportUnusedDisableDirectives: true,
+    overrides: [
+        {
+            files: ['*.js', '*.jsx'],
+            parser: 'espree',
+            parserOptions: {
+                ecmaVersion: 2019,
+                sourceType: 'module'
+            }
+        }
+    ]
 };
