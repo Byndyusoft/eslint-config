@@ -30,7 +30,7 @@ module.exports = {
             }
         },
         {
-            files: ['*{spec, test, tests}.*', '**/__tests__/**'],
+            files: ['*{spec, test, tests}.*', '**/__tests__/**', '**/test/**'],
             rules: {
                 // eslint-plugin-node Stylistic Issues
                 'node/no-sync': 'off' // allow sync methods in tests, e.g. when use factory.ts
