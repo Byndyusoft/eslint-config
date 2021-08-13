@@ -13,6 +13,12 @@ module.exports = {
             files: ['*.js', '*.ts'],
             rules: {
                 // eslint-plugin-unicorn
+                'unicorn/filename-case': [
+                    'warn',
+                    {
+                        case: 'camelCase'
+                    }
+                ],
                 'unicorn/prefer-module': 'off', // unnecessary for backend
                 'unicorn/prefer-node-protocol': 'off' // TODO: TypeScript don't have types for 'node:*'
             }
