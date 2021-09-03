@@ -8,6 +8,7 @@ module.exports = {
         './jest-style-backend.js',
         'plugin:prettier/recommended'
     ],
+    plugins: ['dirs'],
     overrides: [
         {
             files: ['*.js', '*.ts'],
@@ -20,7 +21,14 @@ module.exports = {
                     }
                 ],
                 'unicorn/prefer-module': 'off', // unnecessary for backend
-                'unicorn/prefer-node-protocol': 'off' // TODO: TypeScript don't have types for 'node:*'
+                'unicorn/prefer-node-protocol': 'off', // TODO: TypeScript don't have types for 'node:*'
+                // eslint-plugin-dirs
+                'dirs/dirnames': [
+                    'warn',
+                    {
+                        pattern: '^(__)?([a-z0-9]+)([A-Z][a-z0-9]+)*(__)?$'
+                    }
+                ]
             }
         }
     ]
