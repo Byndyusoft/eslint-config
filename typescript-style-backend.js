@@ -134,14 +134,14 @@ module.exports = {
             }
         },
         {
-            files: ['*.controller.ts'],
+            files: ['*Controller.ts'],
             rules: {
                 // @typescript-eslint/eslint-plugin Supported rules
                 '@typescript-eslint/member-ordering': 'off'
             }
         },
         {
-            files: ['*.dto.ts', '*.entity.ts'],
+            files: ['*Dto.ts', '*Entity.ts'],
             rules: {
                 // @typescript-eslint/eslint-plugin Supported rules
                 '@typescript-eslint/member-ordering': 'off',
