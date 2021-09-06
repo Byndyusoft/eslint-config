@@ -65,13 +65,5 @@ module.exports = {
                 exceptRange: true
             }
         ]
-    },
-    overrides: [
-        {
-            files: ['*{spec, test, tests}.*', '**/__tests__/**'],
-            rules: {
-                'max-classes-per-file': 'off'
-            }
-        }
-    ]
+    }
 };
