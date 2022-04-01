@@ -4,7 +4,7 @@ module.exports = {
             files: ['*.ts', '*.tsx'],
             rules: {
                 // @typescript-eslint/eslint-plugin Supported rules
-                "no-empty-function": "off",
+                '@typescript-eslint/no-empty-function': 'warn',
                 '@typescript-eslint/naming-convention': [
                     'warn',
                     {
