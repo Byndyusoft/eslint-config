@@ -14,7 +14,7 @@ module.exports = {
                 'jest/prefer-called-with': 'warn',
                 'jest/prefer-hooks-on-top': 'warn',
                 'jest/prefer-strict-equal': 'warn',
-                'jest/prefer-to-be-null': 'warn',
+                'jest/prefer-to-be': 'warn',
                 'jest/prefer-to-contain': 'warn',
                 'jest/prefer-to-have-length': 'warn',
                 'jest/prefer-todo': 'warn',
