@@ -1,6 +1,6 @@
 # eslint-config
 
-> requires ESLint >=7.10.0
+> requires ESLint >=8.8.0
 
 ## Install
 
@@ -10,7 +10,6 @@ $ npm i eslint @byndyusoft/eslint-config --save-dev
 ```
 
 Note: If you have React project created with create-react-app, then you haven't install eslint manually, because it comes with react-scripts. Otherwise it won't let you run eslint until you remove it from `package.json`.
-
 
 ## Usage
 
@@ -90,8 +89,3 @@ Note: If you have React project created with create-react-app, then you haven't 
   }
 }
 ```
-
-### TODO
-
-- [ ] `flowtype`
-- [X] `node`
