@@ -25,9 +25,10 @@
   },
   "homepage": "https://github.com/Byndyusoft/eslint-config#readme",
   "devDependencies": {
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2"
+    "eslint": "^8.13.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^12.3.8",
+    "prettier": "^2.6.2"
   },
   "husky": {
     "hooks": {
@@ -40,29 +41,28 @@
     ]
   },
   "peerDependencies": {
-    "eslint": "^7.10.0"
+    "eslint": "^8.8.0"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.3.0",
-    "@typescript-eslint/parser": "^4.3.0",
-    "eslint": "^7.10.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-typescript": "^2.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-dirs": "^0.0.4",
-    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-header": "^3.1.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.0.2",
-    "eslint-plugin-jest-dom": "^3.3.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.21.2",
-    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-jest-dom": "^4.0.1",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-n": "^15.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-sonarjs": "^0.5.0",
-    "eslint-plugin-testing-library": "^3.10.1",
-    "eslint-plugin-unicorn": "^33.0.1",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "eslint-plugin-testing-library": "^5.3.1",
+    "eslint-plugin-unicorn": "^42.0.0",
     "pkg-dir": "^5.0.0"
   }
 }

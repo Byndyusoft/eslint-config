@@ -16,7 +16,7 @@ module.exports = {
             files: ['*.js', '*.jsx'],
             parser: 'espree',
             parserOptions: {
-                ecmaVersion: 2019,
+                ecmaVersion: 2020,
                 sourceType: 'module'
             }
         }
