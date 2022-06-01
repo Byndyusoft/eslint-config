@@ -1,5 +1,7 @@
 # eslint-config
 
+[![NPM version](https://img.shields.io/npm/v/@byndyusoft/eslint-config.svg)](https://www.npmjs.com/package/@byndyusoft/eslint-config)
+
 > requires ESLint >=8.8.0
 
 ## Install
