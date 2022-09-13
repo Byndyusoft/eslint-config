@@ -95,6 +95,12 @@ module.exports = {
                     {
                         selector: 'enumMember',
                         format: ['camelCase']
+                    },
+                    {
+                        selector: ['classProperty', 'parameterProperty', 'classMethod'],
+                        leadingUnderscore: 'forbid',
+                        trailingUnderscore: 'forbid',
+                        format: ['camelCase']
                     }
                 ],
                 // @typescript-eslint/eslint-plugin Extension Rules
