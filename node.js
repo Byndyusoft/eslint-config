@@ -19,7 +19,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['*.ts'],
+            files: ['*.ts', '*.tsx'],
             rules: {
                 // eslint-plugin-n Possible Errors
                 'n/no-missing-import': 'off', // unnecessary for TypeScript
