@@ -28,7 +28,9 @@ module.exports = {
                     {
                         pattern: '^(__)?([a-z0-9]+)([A-Z][a-z0-9]+)*(__)?$'
                     }
-                ]
+                ],
+                // eslint-plugin-prettier
+                'prettier/prettier': 'off' // run prettier externally
             }
         }
     ]
