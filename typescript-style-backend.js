@@ -1,7 +1,7 @@
 module.exports = {
     overrides: [
         {
-            files: ['*.ts'],
+            files: ['*.ts', '*.tsx'],
             plugins: ['simple-import-sort'],
             rules: {
                 // @typescript-eslint/eslint-plugin Supported rules

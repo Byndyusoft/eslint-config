@@ -11,7 +11,7 @@ module.exports = {
     plugins: ['dirs'],
     overrides: [
         {
-            files: ['*.js', '*.ts'],
+            files: ['*.js', '*.ts', '*.tsx'],
             rules: {
                 // eslint-plugin-unicorn
                 'unicorn/filename-case': [
