@@ -2,7 +2,10 @@
 
 [![NPM version](https://img.shields.io/npm/v/@byndyusoft/eslint-config.svg)](https://www.npmjs.com/package/@byndyusoft/eslint-config)
 
-> requires ESLint >=8.8.0
+
+## Requirements
+
+- ESLint v8.8.0 or later
 
 ## Install
 
@@ -15,14 +18,13 @@ Note: If you have React project created with create-react-app, then you haven't 
 
 ## Usage
 
-### Node + Jest
+### Backend 
+**Node + TypeScript/JavaScript + Jest**
 
 ```json
 {
   "extends": [
-    "@byndyusoft/eslint-config/javascript",
-    "@byndyusoft/eslint-config/jest",
-    "@byndyusoft/eslint-config/node"
+    "@byndyusoft/eslint-config/backend"
   ]
 }
 ```
@@ -37,57 +39,21 @@ Note: If you have React project created with create-react-app, then you haven't 
 }
 ```
 
-### Node + Typescript + Jest
+### Frontend 
+**React + TypeScript/JavaScript + Jest**
 
 ```json
 {
   "extends": [
-    "@byndyusoft/eslint-config/typescript",
-    "@byndyusoft/eslint-config/jest",
-    "@byndyusoft/eslint-config/node"
-  ],
-  "parserOptions": {
-    "project": "tsconfig.json"
-  }
-}
-```
-
-**package.json**
-
-```json
-{
-  "engines": {
-    "node": ">=8.10.0"
-  }
-}
-```
-
-### Flow + React + Jest
-
-```json
-{
-  "extends": [
-    "@byndyusoft/eslint-config/javascript",
-    "@byndyusoft/eslint-config/flow",
-    "@byndyusoft/eslint-config/jest",
-    "@byndyusoft/eslint-config/react",
-    "@byndyusoft/eslint-config/react-testing"
+    "@byndyusoft/eslint-config/frontend"
   ]
 }
 ```
 
-### Typescript + React + Jest
+## Maintainers
 
-```json
-{
-  "extends": [
-    "@byndyusoft/eslint-config/typescript",
-    "@byndyusoft/eslint-config/jest",
-    "@byndyusoft/eslint-config/react",
-    "@byndyusoft/eslint-config/react-testing"
-  ],
-  "parserOptions": {
-    "project": "tsconfig.json"
-  }
-}
-```
+- [@Byndyusoft/owners](https://github.com/orgs/Byndyusoft/teams/owners) <<github.maintain@byndyusoft.com>>
+- [@Byndyusoft/team](https://github.com/orgs/Byndyusoft/teams/team)
+- [@KillWolfVlad](https://github.com/KillWolfVlad)
+- [@sadcitizen](https://github.com/sadcitizen)
+
