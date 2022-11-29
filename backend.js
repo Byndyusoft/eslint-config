@@ -5,7 +5,6 @@ module.exports = {
         './node.js',
         './advanced.js',
         './jest.js',
-        './jest-style-backend.js',
         'plugin:prettier/recommended'
     ],
     plugins: ['dirs'],
