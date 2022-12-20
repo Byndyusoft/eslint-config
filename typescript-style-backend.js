@@ -35,7 +35,6 @@ module.exports = {
 
                                 'public-abstract-field',
                                 'protected-abstract-field',
-                                'private-abstract-field',
 
                                 // Constructors
                                 'public-constructor',
@@ -64,8 +63,7 @@ module.exports = {
                                 'private-instance-method',
 
                                 'public-abstract-method',
-                                'protected-abstract-method',
-                                'private-abstract-method'
+                                'protected-abstract-method'
                             ],
                             order: 'alphabetically'
                         }
