@@ -1,8 +1,10 @@
+const { TS_FILES } = require('./const/files');
+
 module.exports = {
     extends: ['./javascript.js'],
     overrides: [
         {
-            files: ['*.ts', '*.tsx'],
+            files: [...TS_FILES],
             extends: [
                 'plugin:@typescript-eslint/eslint-recommended',
                 'plugin:@typescript-eslint/recommended',

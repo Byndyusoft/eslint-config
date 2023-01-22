@@ -1,7 +1,9 @@
+const { TS_FILES } = require('./const/files');
+
 module.exports = {
     overrides: [
         {
-            files: ['*.ts', '*.tsx'],
+            files: [...TS_FILES],
             rules: {
                 // @typescript-eslint/eslint-plugin Supported rules
                 '@typescript-eslint/no-empty-function': 'off',

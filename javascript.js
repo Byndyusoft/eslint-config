@@ -1,3 +1,5 @@
+const { JS_FILES } = require('./const/files');
+
 module.exports = {
     env: {
         es6: true
@@ -13,7 +15,7 @@ module.exports = {
     reportUnusedDisableDirectives: true,
     overrides: [
         {
-            files: ['*.js', '*.jsx'],
+            files: [...JS_FILES],
             parser: 'espree',
             parserOptions: {
                 ecmaVersion: 2020,

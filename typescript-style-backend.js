@@ -1,7 +1,9 @@
+const { TS_FILES } = require('./const/files');
+
 module.exports = {
     overrides: [
         {
-            files: ['*.ts', '*.tsx'],
+            files: [...TS_FILES],
             plugins: ['simple-import-sort'],
             rules: {
                 // @typescript-eslint/eslint-plugin Supported rules
@@ -138,14 +140,14 @@ module.exports = {
             }
         },
         {
-            files: ['*Controller.ts'],
+            files: [...TS_FILES.map((file) => file.replace('*', '*Controller'))],
             rules: {
                 // @typescript-eslint/eslint-plugin Supported rules
                 '@typescript-eslint/member-ordering': 'off'
             }
         },
         {
-            files: ['*Dto.ts', '*Entity.ts'],
+            files: [...TS_FILES.flatMap((file) => ['*Dto', '*Entity'].map((value) => file.replace('*', value)))],
             rules: {
                 // @typescript-eslint/eslint-plugin Supported rules
                 '@typescript-eslint/member-ordering': 'off',

@@ -1,3 +1,5 @@
+const { JS_FILES, TS_FILES } = require('./const/files');
+
 module.exports = {
     extends: [
         './typescript.js',
@@ -10,7 +12,7 @@ module.exports = {
     plugins: ['dirs'],
     overrides: [
         {
-            files: ['*.js', '*.ts', '*.tsx'],
+            files: [...JS_FILES, ...TS_FILES],
             rules: {
                 // eslint-plugin-unicorn
                 'unicorn/filename-case': [

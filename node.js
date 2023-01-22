@@ -1,3 +1,5 @@
+const { TS_FILES } = require('./const/files');
+
 module.exports = {
     env: {
         node: true
@@ -19,7 +21,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['*.ts', '*.tsx'],
+            files: [...TS_FILES],
             rules: {
                 // eslint-plugin-n Possible Errors
                 'n/no-missing-import': 'off', // unnecessary for TypeScript

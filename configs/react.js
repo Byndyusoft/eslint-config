@@ -1,3 +1,5 @@
+const { TS_FILES } = require('../const/files');
+
 module.exports = {
     env: {
         browser: true
@@ -16,7 +18,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['*.ts', '*.tsx'],
+            files: [...TS_FILES],
             rules: {
                 'react/require-default-props': 'off',
                 'react/prop-types': 'off'
