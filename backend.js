@@ -22,7 +22,6 @@ module.exports = {
                     }
                 ],
                 'unicorn/prefer-module': 'off', // unnecessary for backend
-                'unicorn/prefer-node-protocol': 'off', // TODO: TypeScript don't have types for 'node:*'
                 // eslint-plugin-dirs
                 'dirs/dirnames': [
                     'warn',
