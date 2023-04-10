@@ -29,7 +29,26 @@ module.exports = {
                     }
                 ],
                 // eslint-plugin-prettier
-                'prettier/prettier': 'off' // run prettier externally
+                'prettier/prettier': 'off', // run prettier externally,
+                'prefer-destructuring': 'off',
+                'unicorn/prevent-abbreviations': [
+                    'error',
+                    {
+                        'replacements': {
+                            'acc': false,
+                            'args': false,
+                            'doc': false,
+                            'docs': false,
+                            'env': false,
+                            'err': false,
+                            'i': false,
+                            'param': false,
+                            'params': false,
+                            'prod': false,
+                            'temp': false,
+                        }
+                    }
+                ]
             }
         }
     ]
