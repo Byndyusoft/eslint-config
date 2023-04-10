@@ -12,6 +12,8 @@ module.exports = {
         {
             files: ['*.js', '*.ts', '*.tsx'],
             rules: {
+                // eslint general
+                'prefer-destructuring': 'off',
                 // eslint-plugin-unicorn
                 'unicorn/filename-case': [
                     'warn',
@@ -21,16 +23,6 @@ module.exports = {
                 ],
                 'unicorn/prefer-module': 'off', // unnecessary for backend
                 'unicorn/prefer-node-protocol': 'off', // TODO: TypeScript don't have types for 'node:*'
-                // eslint-plugin-dirs
-                'dirs/dirnames': [
-                    'warn',
-                    {
-                        pattern: '^(__)?([a-z0-9]+)([A-Z][a-z0-9]+)*(__)?$'
-                    }
-                ],
-                // eslint-plugin-prettier
-                'prettier/prettier': 'off', // run prettier externally,
-                'prefer-destructuring': 'off',
                 'unicorn/prevent-abbreviations': [
                     'error',
                     {
@@ -48,7 +40,16 @@ module.exports = {
                             'temp': false,
                         }
                     }
-                ]
+                ],
+                // eslint-plugin-dirs
+                'dirs/dirnames': [
+                    'warn',
+                    {
+                        pattern: '^(__)?([a-z0-9]+)([A-Z][a-z0-9]+)*(__)?$'
+                    }
+                ],
+                // eslint-plugin-prettier
+                'prettier/prettier': 'off', // run prettier externally
             }
         }
     ]
