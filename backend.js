@@ -12,6 +12,8 @@ module.exports = {
         {
             files: ['*.js', '*.ts', '*.tsx'],
             rules: {
+                // eslint general
+                'prefer-destructuring': 'off',
                 // eslint-plugin-unicorn
                 'unicorn/filename-case': [
                     'warn',
@@ -21,6 +23,24 @@ module.exports = {
                 ],
                 'unicorn/prefer-module': 'off', // unnecessary for backend
                 'unicorn/prefer-node-protocol': 'off', // TODO: TypeScript don't have types for 'node:*'
+                'unicorn/prevent-abbreviations': [
+                    'error',
+                    {
+                        replacements: {
+                            acc: false,
+                            args: false,
+                            doc: false,
+                            docs: false,
+                            env: false,
+                            err: false,
+                            i: false,
+                            param: false,
+                            params: false,
+                            prod: false,
+                            temp: false
+                        }
+                    }
+                ],
                 // eslint-plugin-dirs
                 'dirs/dirnames': [
                     'warn',
