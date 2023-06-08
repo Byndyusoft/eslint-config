@@ -64,8 +64,7 @@ module.exports = {
 
                                 'public-abstract-method',
                                 'protected-abstract-method'
-                            ],
-                            order: 'alphabetically'
+                            ]
                         }
                     }
                 ], // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/929
@@ -75,16 +74,6 @@ module.exports = {
                     {
                         selector: 'class',
                         format: ['PascalCase']
-                    },
-                    {
-                        selector: 'interface',
-                        format: ['PascalCase'],
-                        prefix: ['I']
-                    },
-                    {
-                        selector: 'typeAlias',
-                        format: ['PascalCase'],
-                        prefix: ['T']
                     },
                     {
                         selector: 'enum',
