@@ -80,6 +80,14 @@ module.exports = {
                         format: ['PascalCase']
                     },
                     {
+                        selector: 'interface',
+                        format: ['PascalCase']
+                    },
+                    {
+                        selector: 'typeAlias',
+                        format: ['PascalCase']
+                    },                    
+                    {
                         selector: 'enumMember',
                         format: ['camelCase']
                     },
