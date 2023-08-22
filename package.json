@@ -47,7 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-dirs": "^0.0.4",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-header": "^3.1.1",
