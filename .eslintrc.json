@@ -1,0 +1,4 @@
+{
+  "root": true,
+  "extends": ["./header-apache-2.0.js", "./index.js", "./node.js"]
+}
