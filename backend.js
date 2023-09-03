@@ -39,6 +39,7 @@ module.exports = {
         ],
         "unicorn/prefer-module": "off", // unnecessary for backend
         "unicorn/prefer-node-protocol": "off", // TODO: TypeScript don't have types for 'node:*'
+        "unicorn/prefer-top-level-await": "off", // esm only rule
         "unicorn/prevent-abbreviations": [
           "error",
           {
