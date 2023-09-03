@@ -20,9 +20,7 @@ module.exports = {
     {
       files: ["*.ts", "*.tsx"],
       extends: [
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/recommended-type-checked",
         "plugin:import/typescript",
       ],
       parser: "@typescript-eslint/parser",

@@ -11,7 +11,7 @@ Shareable config for ESLint.
 
 - Node.js v18 LTS or later
 - Yarn
-- ESLint v8.8.0 or later
+- ESLint v8.44.0 or later
 
 ## Install
 

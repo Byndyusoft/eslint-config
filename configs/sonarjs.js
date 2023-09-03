@@ -19,7 +19,7 @@ module.exports = {
   plugins: ["sonarjs"],
   rules: {
     "sonarjs/cognitive-complexity": "warn",
-    "sonarjs/no-duplicate-string": ["warn", 3],
+    "sonarjs/no-duplicate-string": "warn",
     "sonarjs/no-identical-functions": "warn",
     "sonarjs/no-useless-catch": "off",
     "sonarjs/prefer-immediate-return": "warn",
