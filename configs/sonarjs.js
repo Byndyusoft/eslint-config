@@ -30,7 +30,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        "*{spec, test, tests}.*",
+        "*{spec,test,tests}.*",
         "**/__tests__/**",
         "**/__stories__/**",
         "**/__fixtures__/**",

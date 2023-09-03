@@ -103,7 +103,7 @@ module.exports = {
     },
     {
       files: [
-        "*{spec, test, tests, stories}.*",
+        "*{spec,test,tests,stories}.*",
         "**/__tests__/**",
         "**/__stories__/**",
       ],

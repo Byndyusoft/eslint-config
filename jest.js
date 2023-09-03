@@ -17,7 +17,7 @@
 module.exports = {
   overrides: [
     {
-      files: ["*{spec, test, tests}.*", "**/__tests__/**"],
+      files: ["*{spec,test,tests}.*", "**/__tests__/**"],
       extends: ["plugin:jest/recommended"],
       env: {
         "jest/globals": true,
