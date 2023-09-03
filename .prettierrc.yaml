@@ -1,0 +1,5 @@
+trailingComma: all
+endOfLine: auto
+
+plugins:
+  - prettier-plugin-packagejson

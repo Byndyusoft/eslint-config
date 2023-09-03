@@ -1,153 +1,169 @@
+/*
+ * Copyright 2023 Byndyusoft
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 module.exports = {
-    overrides: [
-        {
-            files: ['*.ts', '*.tsx'],
-            plugins: ['simple-import-sort'],
-            rules: {
-                // @typescript-eslint/eslint-plugin Supported rules
-                '@typescript-eslint/array-type': [
-                    'error',
-                    {
-                        default: 'array-simple'
-                    }
-                ],
-                '@typescript-eslint/explicit-member-accessibility': 'error',
-                '@typescript-eslint/member-ordering': [
-                    'error',
-                    {
-                        default: {
-                            memberTypes: [
-                                // Index signature
-                                'signature',
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      plugins: ["simple-import-sort"],
+      rules: {
+        // @typescript-eslint/eslint-plugin Supported rules
+        "@typescript-eslint/array-type": [
+          "error",
+          {
+            default: "array-simple",
+          },
+        ],
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            default: {
+              memberTypes: [
+                // Index signature
+                "signature",
 
-                                // Fields
-                                'public-static-field',
-                                'protected-static-field',
-                                'private-static-field',
+                // Fields
+                "public-static-field",
+                "protected-static-field",
+                "private-static-field",
 
-                                'public-decorated-field',
-                                'protected-decorated-field',
-                                'private-decorated-field',
+                "public-decorated-field",
+                "protected-decorated-field",
+                "private-decorated-field",
 
-                                'public-instance-field',
-                                'protected-instance-field',
-                                'private-instance-field',
+                "public-instance-field",
+                "protected-instance-field",
+                "private-instance-field",
 
-                                'public-abstract-field',
-                                'protected-abstract-field',
+                "public-abstract-field",
+                "protected-abstract-field",
 
-                                // Constructors
-                                'public-constructor',
-                                'protected-constructor',
-                                'private-constructor',
+                // Constructors
+                "public-constructor",
+                "protected-constructor",
+                "private-constructor",
 
-                                // public-static-{getter,setter}
-                                // protected-static-{getter,setter}
-                                // private-static-{getter,setter}
+                // public-static-{getter,setter}
+                // protected-static-{getter,setter}
+                // private-static-{getter,setter}
 
-                                // public-{getter,setter}
-                                // protected-{getter,setter}
-                                // private-{getter,setter}
+                // public-{getter,setter}
+                // protected-{getter,setter}
+                // private-{getter,setter}
 
-                                // Methods
-                                'public-static-method',
-                                'protected-static-method',
-                                'private-static-method',
+                // Methods
+                "public-static-method",
+                "protected-static-method",
+                "private-static-method",
 
-                                'public-decorated-method',
-                                'protected-decorated-method',
-                                'private-decorated-method',
+                "public-decorated-method",
+                "protected-decorated-method",
+                "private-decorated-method",
 
-                                'public-instance-method',
-                                'protected-instance-method',
-                                'private-instance-method',
+                "public-instance-method",
+                "protected-instance-method",
+                "private-instance-method",
 
-                                'public-abstract-method',
-                                'protected-abstract-method'
-                            ]
-                        }
-                    }
-                ], // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/929
-                '@typescript-eslint/method-signature-style': 'error',
-                '@typescript-eslint/naming-convention': [
-                    'warn',
-                    {
-                        selector: 'class',
-                        format: ['PascalCase']
-                    },
-                    {
-                        selector: 'enum',
-                        format: ['PascalCase']
-                    },
-                    {
-                        selector: 'interface',
-                        format: ['PascalCase']
-                    },
-                    {
-                        selector: 'typeAlias',
-                        format: ['PascalCase']
-                    },                    
-                    {
-                        selector: 'enumMember',
-                        format: ['camelCase']
-                    },
-                    {
-                        selector: ['classProperty', 'parameterProperty', 'classMethod'],
-                        leadingUnderscore: 'forbid',
-                        trailingUnderscore: 'forbid',
-                        format: ['camelCase']
-                    }
-                ],
-                // @typescript-eslint/eslint-plugin Extension Rules
-                'no-useless-constructor': 'off', // fix configs/ecmascript-6.js
-                '@typescript-eslint/no-useless-constructor': 'error', // fix configs/ecmascript-6.js
-                // eslint-plugin-simple-import-sort
-                'simple-import-sort/imports': [
-                    'warn', // style
-                    {
-                        groups: [
-                            // Side effect imports
-                            ['^\\u0000'],
+                "public-abstract-method",
+                "protected-abstract-method",
+              ],
+            },
+          },
+        ], // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/929
+        "@typescript-eslint/method-signature-style": "error",
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            selector: "class",
+            format: ["PascalCase"],
+          },
+          {
+            selector: "enum",
+            format: ["PascalCase"],
+          },
+          {
+            selector: "interface",
+            format: ["PascalCase"],
+          },
+          {
+            selector: "typeAlias",
+            format: ["PascalCase"],
+          },
+          {
+            selector: "enumMember",
+            format: ["camelCase"],
+          },
+          {
+            selector: ["classProperty", "parameterProperty", "classMethod"],
+            leadingUnderscore: "forbid",
+            trailingUnderscore: "forbid",
+            format: ["camelCase"],
+          },
+        ],
+        // @typescript-eslint/eslint-plugin Extension Rules
+        "no-useless-constructor": "off", // fix configs/ecmascript-6.js
+        "@typescript-eslint/no-useless-constructor": "error", // fix configs/ecmascript-6.js
+        // eslint-plugin-simple-import-sort
+        "simple-import-sort/imports": [
+          "warn", // style
+          {
+            groups: [
+              // Side effect imports
+              ["^\\u0000"],
 
-                            // Node.js builtins. You could also generate this regex if you use a `.js` config.
-                            // For example: `^(${require("module").builtinModules.join("|")})(/|$)`
-                            [
-                                '^(_http_agent|_http_client|_http_common|_http_incoming|_http_outgoing|_http_server|_stream_duplex|_stream_passthrough|_stream_readable|_stream_transform|_stream_wrap|_stream_writable|_tls_common|_tls_wrap|assert|async_hooks|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|fs/promises|http|http2|https|inspector|module|net|os|path|perf_hooks|process|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|trace_events|tty|url|util|v8|vm|wasi|worker_threads|zlib)(/|$)'
-                            ],
+              // Node.js builtins. You could also generate this regex if you use a `.js` config.
+              // For example: `^(${require("module").builtinModules.join("|")})(/|$)`
+              [
+                "^(_http_agent|_http_client|_http_common|_http_incoming|_http_outgoing|_http_server|_stream_duplex|_stream_passthrough|_stream_readable|_stream_transform|_stream_wrap|_stream_writable|_tls_common|_tls_wrap|assert|async_hooks|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|fs/promises|http|http2|https|inspector|module|net|os|path|perf_hooks|process|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|trace_events|tty|url|util|v8|vm|wasi|worker_threads|zlib)(/|$)",
+              ],
 
-                            // Packages.
-                            // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-                            ['^@?\\w'],
+              // Packages.
+              // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+              ["^@?\\w"],
 
-                            // Absolute imports and other imports such as Vue-style `@/foo`.
-                            // Anything that does not start with a dot.
-                            ['^[^.]'],
+              // Absolute imports and other imports such as Vue-style `@/foo`.
+              // Anything that does not start with a dot.
+              ["^[^.]"],
 
-                            // Parent imports. Put `..` last.
-                            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+              // Parent imports. Put `..` last.
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
 
-                            // Other relative imports. Put same-folder imports and `.` last.
-                            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$']
-                        ]
-                    }
-                ],
-                'simple-import-sort/exports': 'error'
-            }
-        },
-        {
-            files: ['*Controller.ts'],
-            rules: {
-                // @typescript-eslint/eslint-plugin Supported rules
-                '@typescript-eslint/member-ordering': 'off'
-            }
-        },
-        {
-            files: ['*Dto.ts', '*Entity.ts'],
-            rules: {
-                // @typescript-eslint/eslint-plugin Supported rules
-                '@typescript-eslint/member-ordering': 'off',
-                '@typescript-eslint/no-inferrable-types': 'off' // for @nestjs/swagger
-            }
-        }
-    ]
+              // Other relative imports. Put same-folder imports and `.` last.
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+            ],
+          },
+        ],
+        "simple-import-sort/exports": "error",
+      },
+    },
+    {
+      files: ["*Controller.ts"],
+      rules: {
+        // @typescript-eslint/eslint-plugin Supported rules
+        "@typescript-eslint/member-ordering": "off",
+      },
+    },
+    {
+      files: ["*Dto.ts", "*Entity.ts"],
+      rules: {
+        // @typescript-eslint/eslint-plugin Supported rules
+        "@typescript-eslint/member-ordering": "off",
+        "@typescript-eslint/no-inferrable-types": "off", // for @nestjs/swagger
+      },
+    },
+  ],
 };
