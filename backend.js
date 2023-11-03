@@ -1,5 +1,6 @@
 module.exports = {
     extends: [
+        './configs/jest-formatting.js',
         './typescript.js',
         './typescript-style-backend.js',
         './node.js',
