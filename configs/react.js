@@ -2,7 +2,7 @@ module.exports = {
     env: {
         browser: true
     },
-    extends: ['plugin:react/recommended'],
+    extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime'],
     parserOptions: {
         ecmaFeatures: {
             jsx: true
