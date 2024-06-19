@@ -1,5 +1,10 @@
 module.exports = {
-    extends: ['plugin:sonarjs/recommended'],
+    /**
+     * "recommended" for ESLint 9.x
+     * "recommended-legacy" for ESLint 8.x
+     * See https://github.com/SonarSource/eslint-plugin-sonarjs/commit/fc57b805ebf984646e4093b3df3d436e769795d1
+     */
+    extends: ['plugin:sonarjs/recommended-legacy'],
     plugins: ['sonarjs'],
     rules: {
         'sonarjs/cognitive-complexity': 'warn',
