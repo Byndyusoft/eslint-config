@@ -86,7 +86,7 @@ module.exports = {
                     {
                         selector: 'typeAlias',
                         format: ['PascalCase']
-                    },                    
+                    },
                     {
                         selector: 'enumMember',
                         format: ['camelCase']
@@ -131,7 +131,8 @@ module.exports = {
                         ]
                     }
                 ],
-                'simple-import-sort/exports': 'error'
+                'simple-import-sort/exports': 'error',
+                '@typescript-eslint/no-unsafe-enum-comparison': 'off'
             }
         },
         {
