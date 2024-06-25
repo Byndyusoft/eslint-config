@@ -42,6 +42,7 @@ module.exports = {
                         }
                     }
                 ],
+                'unicorn/prefer-top-level-await': 'off',
                 // eslint-plugin-dirs
                 'dirs/dirnames': [
                     'warn',

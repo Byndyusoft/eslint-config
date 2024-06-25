@@ -5,12 +5,12 @@
 
 ## Requirements
 
-- ESLint v8.8.0 or later
+- ESLint v8.57.0 or later, but less than v9.0.0
 
 ## Install
 
 ```shell script
-$ npm i eslint --save-dev
+$ npm i eslint@^8.57.0 --save-dev
 $ npm i eslint @byndyusoft/eslint-config --save-dev
 ```
 

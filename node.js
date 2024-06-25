@@ -15,7 +15,8 @@ module.exports = {
         'n/global-require': 'error',
         'n/no-sync': 'error',
         'n/prefer-promises/dns': 'error',
-        'n/prefer-promises/fs': 'error'
+        'n/prefer-promises/fs': 'error',
+        'n/no-sync': 'off'
     },
     overrides: [
         {
