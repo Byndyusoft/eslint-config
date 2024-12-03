@@ -1,9 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const pkgDir = require('pkg-dir');
-
-const pjson = JSON.parse(fs.readFileSync(path.join(pkgDir.sync(), 'package.json'), 'utf8'));
+const pjson = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'));
 
 const year = new Date().getUTCFullYear();
 const copyright = pjson.copyright || pjson.author;
