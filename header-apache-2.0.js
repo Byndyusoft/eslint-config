@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const pjson = JSON.parse(fs.readFileSync(path.join(path.resolve(process.cwd()), 'package.json'), 'utf8'));
+const pjson = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'));
 
 const year = new Date().getUTCFullYear();
 const copyright = pjson.copyright || pjson.author;
