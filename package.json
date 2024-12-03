@@ -1,6 +1,6 @@
 {
   "name": "@byndyusoft/eslint-config",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "ESLint config for Byndyusoft projects",
   "main": "index.js",
   "scripts": {
