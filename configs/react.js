@@ -18,6 +18,12 @@ export default [
             }
         },
         settings: {
+            'import/resolver': {
+                typescript: {},
+                node: {
+                    extensions: ['.js', '.jsx', '.ts', '.tsx']
+                }
+            },
             react: {
                 version: 'detect'
             }
@@ -108,7 +114,8 @@ export default [
             'react/jsx-no-script-url': 'error',
             'react/jsx-no-target-blank': 'warn',
             'react/jsx-no-useless-fragment': 'warn',
-            'react/jsx-pascal-case': 'error'
+            'react/jsx-pascal-case': 'error',
+            'react/react-in-jsx-scope': 'off'
         }
     },
     {
