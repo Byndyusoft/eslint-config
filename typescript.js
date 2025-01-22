@@ -6,8 +6,7 @@ import importPlugin from 'eslint-plugin-import';
 export default [
     ...jsConfig,
     {
-        files: ['*.ts', '*.tsx'],
-
+        files: ['**/*.{ts,tsx}'],
         languageOptions: {
             parser: tsParser,
             parserOptions: {
@@ -96,7 +95,7 @@ export default [
         }
     },
     {
-        files: ['*{spec,test,tests,stories}.*', '**/__tests__/**', '**/__stories__/**'],
+        files: ['**/*{spec,test,tests,stories}.*', '**/__tests__/**', '**/__stories__/**'],
         rules: {
             '@typescript-eslint/unbound-method': 'off'
         }

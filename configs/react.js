@@ -119,7 +119,7 @@ export default [
         }
     },
     {
-        files: ['*.ts', '*.tsx'],
+        files: ['**/*.{ts,tsx}'],
         rules: {
             'react/require-default-props': 'off',
             'react/prop-types': 'off'

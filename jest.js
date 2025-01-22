@@ -3,7 +3,7 @@ import globals from 'globals';
 
 export default [
     {
-        files: ['*{spec,test,tests}.*', '**/__tests__/**'],
+        files: ['**/*{spec,test,tests}.*', '**/__tests__/**'],
         plugins: {
             jest: jestPlugin
         },

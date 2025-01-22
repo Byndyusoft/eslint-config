@@ -27,10 +27,10 @@ export default [
         }
     },
     {
-        files: ['*.js', '*.jsx'],
+        files: ['**/*.{js,jsx}'],
         languageOptions: {
             parser: tsParser,
-            ecmaVersion: 2020,
+            ecmaVersion: 'latest',
             sourceType: 'module'
         }
     }
