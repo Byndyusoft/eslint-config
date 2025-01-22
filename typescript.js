@@ -91,7 +91,8 @@ export default [
             '@typescript-eslint/no-shadow': 'error',
             '@typescript-eslint/only-throw-error': 'error',
             'no-return-await': 'off',
-            '@typescript-eslint/return-await': 'error'
+            '@typescript-eslint/return-await': 'error',
+            'no-undef': 'off'
         }
     },
     {
