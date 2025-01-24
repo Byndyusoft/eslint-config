@@ -30,13 +30,18 @@ export default [
             ...(tsPlugin.configs['recommended-requiring-type-checking']?.rules ?? {}),
             ...(importPlugin.configs?.typescript?.rules ?? {}),
             // ESLint Best Practices
-            'class-methods-use-this': 'off', // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/1103
-            'consistent-return': 'off', // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/1277
-            'default-case': 'off', // unnecessary for TypeScript
-            // eslint-plugin-import Static analysis
-            'import/default': 'off', // TODO: https://github.com/benmosher/eslint-plugin-import/issues/1908
-            // eslint-plugin-import Helpful warnings
-            'import/no-named-as-default-member': 'off', // TODO: don't work with esModuleInterop
+            'class-methods-use-this': 'off',
+            '@typescript-eslint/class-methods-use-this': [
+                'error',
+                {
+                    ignoreClassesThatImplementAnInterface: true
+                }
+            ],
+            'consistent-return': 'off',
+            '@typescript-eslint/consistent-return': 'error',
+            'default-case': 'error',
+            'import/default': 'error',
+            'import/no-named-as-default-member': 'error',
             // @typescript-eslint/eslint-plugin Supported Rules
             '@typescript-eslint/ban-ts-comment': 'warn',
             '@typescript-eslint/consistent-type-assertions': [

@@ -4,7 +4,6 @@ import ecmascript6 from './configs/ecmascript-6.js';
 import errors from './configs/errors.js';
 import variables from './configs/variables.js';
 import importJS from './configs/import.js';
-import tsParser from '@typescript-eslint/parser';
 import globals from 'globals';
 
 export default [
@@ -29,7 +28,6 @@ export default [
     {
         files: ['**/*.{js,jsx}'],
         languageOptions: {
-            parser: tsParser,
             ecmaVersion: 'latest',
             sourceType: 'module'
         }
