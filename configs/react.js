@@ -31,13 +31,13 @@ export default [
 
         rules: {
             ...(reactPlugin.configs.recommended?.rules ?? {}),
-            // 'react/boolean-prop-naming': [ Правило не работает :((
-            //     'warn',
-            //     {
-            //         propTypeNames: ['boolean'],
-            //         rule: '^(is|has|can)[A-Z]([A-Za-z0-9]?)+'
-            //     }
-            // ],
+            'react/boolean-prop-naming': [
+                'warn',
+                {
+                    propTypeNames: ['boolean'],
+                    rule: '^(is|has|can)[A-Z]([A-Za-z0-9]?)+'
+                }
+            ],
             'react/button-has-type': 'error',
             'react/default-props-match-prop-types': 'error',
             'react/forbid-dom-props': [

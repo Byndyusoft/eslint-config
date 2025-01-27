@@ -28,6 +28,12 @@ export default [
                 {
                     selector: 'enumMember',
                     format: ['PascalCase']
+                },
+                {
+                    selector: 'variable',
+                    types: ['boolean'],
+                    format: ['PascalCase'],
+                    prefix: ['is', 'has', 'can', 'should']
                 }
             ]
         }
