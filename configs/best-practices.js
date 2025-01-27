@@ -5,7 +5,7 @@ export default [
             'array-callback-return': 'error',
             'block-scoped-var': 'error',
             'class-methods-use-this': 'warn',
-            complexity: 'warn', // TODO
+            complexity: ['warn', { max: 20 }],
             'consistent-return': 'error',
             curly: ['error', 'multi-line'],
             'default-case': 'error',
