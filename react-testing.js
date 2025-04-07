@@ -1,3 +1,4 @@
-module.exports = {
-    extends: ['./configs/testing-library.js', './configs/jest-dom.js']
-};
+import testingLibraryConfig from './configs/testing-library.js';
+import jestDomConfig from './configs/jest-dom.js';
+
+export default [...testingLibraryConfig, ...jestDomConfig];
