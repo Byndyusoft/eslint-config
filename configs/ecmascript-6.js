@@ -1,17 +1,10 @@
 /* https://eslint.org/docs/rules/#ecmascript-6 */
+
 export default [
     {
         rules: {
             'arrow-body-style': ['warn', 'as-needed'],
-            'arrow-parens': ['warn', 'as-needed'],
-            'arrow-spacing': [
-                'warn',
-                {
-                    before: true,
-                    after: true
-                }
-            ],
-            'generator-star-spacing': [
+            '@stylistic/generator-star-spacing': [
                 'warn',
                 {
                     before: false,
@@ -37,10 +30,10 @@ export default [
             'prefer-rest-params': 'warn',
             'prefer-spread': 'warn',
             'prefer-template': 'warn',
-            'rest-spread-spacing': ['warn', 'never'],
+            '@stylistic/rest-spread-spacing': ['warn', 'never'],
             'symbol-description': 'warn',
-            'template-curly-spacing': ['warn', 'never'],
-            'yield-star-spacing': ['warn', 'before']
+            '@stylistic/template-curly-spacing': ['warn', 'never'],
+            '@stylistic/yield-star-spacing': ['warn', 'before']
         }
     }
 ];

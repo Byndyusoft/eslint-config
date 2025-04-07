@@ -1,4 +1,5 @@
 /* https://eslint.org/docs/rules/#best-practices */
+
 export default [
     {
         rules: {
@@ -11,7 +12,6 @@ export default [
             'default-case': 'error',
             'default-case-last': 'warn',
             'default-param-last': 'warn',
-            'dot-location': ['error', 'property'],
             'dot-notation': 'warn',
             eqeqeq: 'error',
             'guard-for-in': 'error',
@@ -24,7 +24,7 @@ export default [
             'no-eval': 'error',
             'no-extend-native': 'error',
             'no-extra-label': 'error',
-            'no-floating-decimal': 'error',
+            '@stylistic/no-floating-decimal': 'error',
             'no-implicit-coercion': [
                 'error',
                 {
@@ -37,13 +37,12 @@ export default [
             'no-labels': 'error',
             'no-lone-blocks': 'error',
             'no-loop-func': 'error',
-            'no-multi-spaces': 'warn',
+            '@stylistic/no-multi-spaces': 'warn',
             'no-new-func': 'error',
             'no-new-wrappers': 'error',
             'no-param-reassign': 'error',
             'no-proto': 'error',
             'no-return-assign': 'error',
-            'no-return-await': 'error',
             'no-script-url': 'error',
             'no-self-compare': 'error',
             'no-sequences': 'error',
@@ -58,7 +57,7 @@ export default [
             'prefer-regex-literals': 'warn',
             radix: 'error',
             'require-await': 'error',
-            'wrap-iife': ['error', 'inside'],
+            '@stylistic/wrap-iife': ['error', 'inside'],
             yoda: [
                 'warn',
                 'never',

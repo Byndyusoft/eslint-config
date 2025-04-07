@@ -35,7 +35,16 @@ export default [
                     format: ['PascalCase'],
                     prefix: ['is', 'has', 'can', 'should']
                 }
-            ]
+            ],
+            '@stylistic/arrow-parens': ['warn', 'as-needed'],
+            '@stylistic/arrow-spacing': [
+                'warn',
+                {
+                    before: true,
+                    after: true
+                }
+            ],
+            '@stylistic/dot-location': ['error', 'property']
         }
     }
 ];

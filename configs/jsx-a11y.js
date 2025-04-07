@@ -7,8 +7,7 @@ export default [
         },
         rules: {
             ...(jsxA11yPlugin.configs?.recommended?.rules ?? {}),
-            'jsx-a11y/click-events-have-key-events': 'off',
-            'jsx-a11y/accessible-emoji': 'warn'
+            'jsx-a11y/click-events-have-key-events': 'off'
         }
     }
 ];

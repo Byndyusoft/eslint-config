@@ -63,12 +63,13 @@ export default [
             ],
             '@typescript-eslint/explicit-module-boundary-types': 'error',
             '@typescript-eslint/no-confusing-non-null-assertion': 'error',
-            '@typescript-eslint/no-empty-interface': [
-                'warn',
-                {
-                    allowSingleExtends: true
-                }
-            ],
+            //@deprecated to https://typescript-eslint.io/rules/no-empty-object-type/
+            // '@typescript-eslint/no-empty-interface': [
+            //     'warn',
+            //     {
+            //         allowSingleExtends: true
+            //     }
+            // ],
             '@typescript-eslint/no-explicit-any': 'error',
             '@typescript-eslint/no-floating-promises': 'warn',
             '@typescript-eslint/no-invalid-void-type': 'error',
@@ -84,7 +85,6 @@ export default [
             '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
             '@typescript-eslint/prefer-regexp-exec': 'warn',
             '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
-            '@typescript-eslint/prefer-ts-expect-error': 'error',
             '@typescript-eslint/require-array-sort-compare': 'error',
             '@typescript-eslint/switch-exhaustiveness-check': 'error',
             '@typescript-eslint/unified-signatures': 'error',
@@ -95,7 +95,6 @@ export default [
             'no-shadow': 'off',
             '@typescript-eslint/no-shadow': 'error',
             '@typescript-eslint/only-throw-error': 'error',
-            'no-return-await': 'off',
             '@typescript-eslint/return-await': 'error',
             'no-undef': 'off'
         }
