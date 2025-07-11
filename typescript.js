@@ -88,7 +88,7 @@ module.exports = {
             }
         },
         {
-            files: ['*{spec, test, tests, stories}.*', '**/__tests__/**', '**/__stories__/**'],
+            files: ['**/*.{spec,test,tests,stories}.*', '**/__tests__/**', '**/__stories__/**'],
             rules: {
                 '@typescript-eslint/unbound-method': 'off'
             }
