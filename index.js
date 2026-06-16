@@ -1,1 +1,1 @@
-module.exports = require('./javascript');
+export { default } from './javascript.js';
