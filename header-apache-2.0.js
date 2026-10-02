@@ -1,14 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import header from 'eslint-plugin-header';
-import { fixPlugin } from './utils/plugins.js';
+import headerPlugin from '@tony.ganchev/eslint-plugin-header';
 
 const pjson = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'));
 
 const year = new Date().getUTCFullYear();
 const copyright = pjson.copyright || pjson.author;
-
-const headerPlugin = fixPlugin(header);
 
 export default [
     {

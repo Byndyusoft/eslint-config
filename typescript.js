@@ -1,10 +1,6 @@
 import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
-import importPlugin from 'eslint-plugin-import';
-import { fixPlugin } from './utils/plugins.js';
 import javascript from './javascript.js';
-
-const importTypescriptPlugin = fixPlugin(importPlugin);
 
 export default defineConfig(
     ...javascript,
@@ -16,11 +12,8 @@ export default defineConfig(
                 projectService: true
             }
         },
-        plugins: {
-            import: importTypescriptPlugin
-        },
         settings: {
-            'import/resolver': {
+            'import-x/resolver': {
                 typescript: true
             }
         },
@@ -29,10 +22,10 @@ export default defineConfig(
             'class-methods-use-this': 'off', // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/1103
             'consistent-return': 'off', // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/1277
             'default-case': 'off', // unnecessary for TypeScript
-            // eslint-plugin-import Static analysis
-            'import/default': 'off', // TODO: https://github.com/benmosher/eslint-plugin-import/issues/1908
-            // eslint-plugin-import Helpful warnings
-            'import/no-named-as-default-member': 'off', // TODO: don't work with esModuleInterop
+            // eslint-plugin-import-x Static analysis
+            'import-x/default': 'off',
+            // eslint-plugin-import-x Helpful warnings
+            'import-x/no-named-as-default-member': 'off', // doesn't work with esModuleInterop
             '@typescript-eslint/ban-ts-comment': 'warn',
             '@typescript-eslint/consistent-type-assertions': [
                 'error',

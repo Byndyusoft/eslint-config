@@ -1,15 +1,15 @@
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import { legacyPluginConfig } from '../utils/plugins.js';
+import reactA11y from 'eslint-plugin-react-a11y';
 
 export const jsxA11yRules = {
-    'jsx-a11y/click-events-have-key-events': 'off'
+    'react-a11y/click-events-have-key-events': 'off'
 };
 
 export default [
-    legacyPluginConfig('jsx-a11y', jsxA11y, 'recommended', {
+    {
+        ...reactA11y.configs.recommended,
         rules: {
-            ...jsxA11y.configs.recommended.rules,
+            ...reactA11y.configs.recommended.rules,
             ...jsxA11yRules
         }
-    })
+    }
 ];

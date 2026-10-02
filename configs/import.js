@@ -1,11 +1,10 @@
-import importPlugin from 'eslint-plugin-import';
-import { legacyPluginConfig } from '../utils/plugins.js';
+import { importX } from 'eslint-plugin-import-x';
 
-const importErrors = legacyPluginConfig('import', importPlugin, 'errors');
-const importWarnings = legacyPluginConfig('import', importPlugin, 'warnings');
+const importErrors = importX.flatConfigs.errors;
+const importWarnings = importX.flatConfigs.warnings;
 
 export const importRules = {
-    'import/extensions': [
+    'import-x/extensions': [
         'warn',
         'always',
         {
@@ -16,12 +15,11 @@ export const importRules = {
             json: 'never'
         }
     ],
-    'import/first': 'warn',
-    'import/no-cycle': 'error',
-    'import/no-mutable-exports': 'error',
-    'import/no-self-import': 'error',
-    'import/no-unused-modules': 'warn',
-    'import/no-useless-path-segments': 'warn'
+    'import-x/first': 'warn',
+    'import-x/no-cycle': 'error',
+    'import-x/no-mutable-exports': 'error',
+    'import-x/no-self-import': 'error',
+    'import-x/no-useless-path-segments': 'warn'
 };
 
 export default [

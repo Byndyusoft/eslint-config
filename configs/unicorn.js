@@ -18,7 +18,6 @@ export const unicornRules = {
     'unicorn/no-array-reduce': 'off',
     'unicorn/no-for-loop': 'warn',
     'unicorn/no-null': 'off',
-    'unicorn/no-unsafe-regex': 'error',
     'unicorn/no-zero-fractions': 'warn',
     'unicorn/numeric-separators-style': 'off',
     'unicorn/prefer-add-event-listener': 'warn',

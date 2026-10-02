@@ -1,6 +1,6 @@
 {
   "name": "@byndyusoft/eslint-config",
-  "version": "4.0.0",
+  "version": "4.0.0-alpha.0",
   "description": "ESLint config for Byndyusoft projects",
   "type": "module",
   "main": "index.js",
@@ -11,18 +11,26 @@
   ],
   "exports": {
     ".": "./index.js",
+    "./advanced": "./advanced.js",
     "./backend": "./backend.js",
     "./frontend": "./frontend.js",
+    "./header-apache-2.0": "./header-apache-2.0.js",
     "./javascript": "./javascript.js",
+    "./jest": "./jest.js",
+    "./jest-style-frontend": "./jest-style-frontend.js",
+    "./node": "./node.js",
+    "./react": "./react.js",
+    "./react-testing": "./react-testing.js",
     "./typescript": "./typescript.js",
-    "./flow": "./flow.js",
-    "./header-apache-2.0": "./header-apache-2.0.js"
+    "./typescript-style-backend": "./typescript-style-backend.js",
+    "./typescript-style-frontend": "./typescript-style-frontend.js"
   },
   "engines": {
-    "node": ">=20.19.0"
+    "node": "^22.13.0 || >=24"
   },
   "scripts": {
     "test": "node --test test/smoke.test.js",
+    "test:package": "node test/package-consumer.js",
     "lint": "eslint .",
     "prepare": "husky || true"
   },
@@ -45,23 +53,23 @@
   },
   "homepage": "https://github.com/Byndyusoft/eslint-config#readme",
   "peerDependencies": {
-    "eslint": ">=10.4.0"
+    "eslint": "^10.4.0"
   },
   "dependencies": {
-    "@eslint/compat": "^1.4.1",
-    "@eslint/js": "^9.39.2",
+    "@eslint-react/eslint-plugin": "^5.23.3",
+    "@eslint/compat": "^2.1.1",
+    "@eslint/js": "^10.0.1",
+    "@tony.ganchev/eslint-plugin-header": "^3.4.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-dirs": "^0.0.4",
-    "eslint-plugin-header": "^3.1.1",
-    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-jest": "^29.15.2",
-    "eslint-plugin-jest-dom": "^5.5.0",
+    "eslint-plugin-jest-dom": "^5.10.1",
     "eslint-plugin-jest-formatting": "^3.1.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-n": "^18.1.0",
     "eslint-plugin-prettier": "^5.5.6",
-    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-a11y": "^2.5.3",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-simple-import-sort": "^13.0.0",
     "eslint-plugin-sonarjs": "^4.0.3",
@@ -71,9 +79,11 @@
     "typescript-eslint": "^8.61.1"
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/react": "^19.2.7",
-    "eslint": "^10.5.0",
+    "eslint": "^10.11.0",
     "husky": "^9.1.7",
+    "jest": "^30.5.2",
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.4",
     "react": "^19.2.3",
