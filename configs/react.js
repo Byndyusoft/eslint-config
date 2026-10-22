@@ -1,112 +1,43 @@
-module.exports = {
-    env: {
-        browser: true
-    },
-    extends: ['plugin:react/recommended'],
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true
-        }
-    },
-    plugins: ['react'],
-    settings: {
-        react: {
-            version: 'detect'
-        }
-    },
-    overrides: [
-        {
-            files: ['*.ts', '*.tsx'],
-            rules: {
-                'react/require-default-props': 'off',
-                'react/prop-types': 'off'
-            }
-        }
-    ],
-    rules: {
-        // 'react/boolean-prop-naming': [ Правило не работает :((
-        //     'warn',
-        //     {
-        //         propTypeNames: ['boolean'],
-        //         rule: '^(is|has|can)[A-Z]([A-Za-z0-9]?)+'
-        //     }
-        // ],
-        'react/button-has-type': 'error',
-        'react/default-props-match-prop-types': 'error',
-        'react/forbid-dom-props': [
-            'warn',
-            {
-                forbid: [
-                    {
-                        propName: 'style',
-                        message: 'Avoid using inline styles'
-                    }
-                ]
-            }
-        ],
-        'react/forbid-component-props': [
-            'warn',
-            {
-                forbid: [
-                    {
-                        propName: 'style',
-                        message: 'Avoid using inline styles'
-                    }
-                ]
-            }
-        ],
-        'react/forbid-foreign-prop-types': 'warn',
-        'react/forbid-prop-types': 'error',
-        'react/no-access-state-in-setstate': 'error',
-        'react/no-array-index-key': 'warn',
-        'react/no-danger': 'error',
-        'react/no-multi-comp': [
-            'error',
-            {
-                ignoreStateless: true
-            }
-        ],
-        'react/no-redundant-should-component-update': 'error',
-        'react/no-this-in-sfc': 'error',
-        'react/no-typos': 'error',
-        'react/no-unsafe': 'error',
-        'react/no-unused-prop-types': 'error',
-        'react/no-unused-state': 'error',
-        'react/no-will-update-set-state': 'error',
-        'react/prefer-es6-class': ['error', 'always'],
-        'react/prefer-stateless-function': 'error',
-        'react/prop-types': 'error',
-        'react/require-default-props': 'error',
-        'react/require-optimization': 'error',
-        'react/self-closing-comp': 'warn',
-        'react/state-in-constructor': ['warn', 'never'],
-        'react/style-prop-object': 'error',
-        'react/void-dom-elements-no-children': 'error',
-        'react/jsx-boolean-value': ['warn', 'never'],
-        'react/jsx-curly-brace-presence': ['warn', 'never'],
-        'react/jsx-filename-extension': [
-            'warn',
-            {
-                extensions: ['.js', '.jsx', '.tsx']
-            }
-        ],
-        'react/jsx-fragments': ['warn', 'syntax'],
-        'react/jsx-handler-names': [
-            'warn',
-            {
-                eventHandlerPrefix: 'handle', // `handleClick`, `handleChange`, etc
-                eventHandlerPropPrefix: 'on' // `onClick`, `onChange`, etc
-            }
-        ],
-        'react/jsx-no-bind': [
-            'error',
-            {
-                allowArrowFunctions: true
-            }
-        ],
-        'react/jsx-no-script-url': 'error',
-        'react/jsx-no-target-blank': 'warn',
-        'react/jsx-no-useless-fragment': 'warn',
-        'react/jsx-pascal-case': 'error'
-    }
+import react from '@eslint-react/eslint-plugin';
+import globals from 'globals';
+
+export const reactRules = {
+    '@eslint-react/dom-no-missing-button-type': 'error',
+    '@eslint-react/dom-no-dangerously-set-innerhtml': 'error',
+    '@eslint-react/dom-no-script-url': 'error',
+    '@eslint-react/dom-no-unsafe-target-blank': 'warn',
+    '@eslint-react/no-unused-state': 'error',
+    '@eslint-react/jsx-no-useless-fragment': 'warn',
+    '@eslint-react/error-boundaries': 'off',
+    '@eslint-react/exhaustive-deps': 'off',
+    '@eslint-react/purity': 'off',
+    '@eslint-react/rules-of-hooks': 'off',
+    '@eslint-react/set-state-in-effect': 'off',
+    '@eslint-react/set-state-in-render': 'off',
+    '@eslint-react/static-components': 'off',
+    '@eslint-react/unsupported-syntax': 'off',
+    '@eslint-react/use-memo': 'off'
 };
+
+export default [
+    {
+        languageOptions: {
+            globals: {
+                ...globals.browser
+            },
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            }
+        }
+    },
+    react.configs.recommended,
+    {
+        files: ['**/*.{ts,tsx,mts,cts}'],
+        extends: [react.configs['recommended-typescript']]
+    },
+    {
+        rules: reactRules
+    }
+];

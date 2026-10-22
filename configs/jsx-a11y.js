@@ -1,8 +1,15 @@
-module.exports = {
-    extends: ['plugin:jsx-a11y/recommended'],
-    plugins: ['jsx-a11y'],
-    rules: {
-        'jsx-a11y/click-events-have-key-events': 'off',
-        'jsx-a11y/accessible-emoji': 'warn'
-    }
+import reactA11y from 'eslint-plugin-react-a11y';
+
+export const jsxA11yRules = {
+    'react-a11y/click-events-have-key-events': 'off'
 };
+
+export default [
+    {
+        ...reactA11y.configs.recommended,
+        rules: {
+            ...reactA11y.configs.recommended.rules,
+            ...jsxA11yRules
+        }
+    }
+];

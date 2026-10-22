@@ -2,31 +2,39 @@
 
 [![NPM version](https://img.shields.io/npm/v/@byndyusoft/eslint-config.svg)](https://www.npmjs.com/package/@byndyusoft/eslint-config)
 
+Shared ESLint flat config for Byndyusoft projects.
 
 ## Requirements
 
-- ESLint v8.57.0 or later, but less than v9.0.0
+- Node.js `^22.13.0 || >=24`
+- ESLint `^10.4.0`
 
 ## Install
 
-```shell script
-$ npm i eslint@^8.57.0 --save-dev
-$ npm i eslint @byndyusoft/eslint-config --save-dev
+```shell
+npm i -D eslint@^10 @byndyusoft/eslint-config@4.0.0-beta.0
 ```
 
-Note: If you have React project created with create-react-app, then you haven't install eslint manually, because it comes with react-scripts. Otherwise it won't let you run eslint until you remove it from `package.json`.
+For TypeScript projects, also install TypeScript:
+
+```shell
+npm i -D typescript
+```
+
+React, Jest, and Vitest projects also need their own framework or test runner dependencies and any required type declarations. The presets configure ESLint; they do not install the application framework or test runner for you.
 
 ## Usage
 
-### Backend 
+Create `eslint.config.js` in your project root if your `package.json` has `"type": "module"`. Otherwise, use `eslint.config.mjs` for the `import` examples below.
+
+### Backend
+
 **Node + TypeScript/JavaScript + Jest**
 
-```json
-{
-  "extends": [
-    "@byndyusoft/eslint-config/backend"
-  ]
-}
+```js
+import backend from '@byndyusoft/eslint-config/backend';
+
+export default backend;
 ```
 
 **package.json**
@@ -34,21 +42,107 @@ Note: If you have React project created with create-react-app, then you haven't 
 ```json
 {
   "engines": {
-    "node": ">=8.10.0"
+    "node": "^22.13.0 || >=24"
   }
 }
 ```
 
-### Frontend 
-**React + TypeScript/JavaScript + Jest**
+### Frontend
+
+**React + TypeScript/JavaScript**
+
+```js
+import frontend from '@byndyusoft/eslint-config/frontend';
+
+export default frontend;
+```
+
+### Vitest
+
+Combine the `vitest` preset with your JavaScript, TypeScript, or frontend preset:
+
+```js
+import { defineConfig } from 'eslint/config';
+import frontend from '@byndyusoft/eslint-config/frontend';
+import vitest from '@byndyusoft/eslint-config/vitest';
+
+export default defineConfig(...frontend, ...vitest);
+```
+
+The preset uses `@vitest/eslint-plugin` recommended rules with the same custom rule settings and severity levels as the Jest preset. It enables Vitest globals and applies only to `*.spec.*`, `*.test.*`, `*.tests.*`, and files inside `__tests__/`. Rules use the `vitest/*` namespace.
+
+### Public entry points
+
+| Import | Description |
+|--------|-------------|
+| `@byndyusoft/eslint-config` | Base JavaScript config |
+| `@byndyusoft/eslint-config/backend` | Complete Node.js + TypeScript + Jest config |
+| `@byndyusoft/eslint-config/frontend` | Complete React + TypeScript config |
+| `@byndyusoft/eslint-config/javascript` | Same as default |
+| `@byndyusoft/eslint-config/typescript` | JavaScript + TypeScript rules |
+| `@byndyusoft/eslint-config/advanced` | SonarJS and Unicorn rules |
+| `@byndyusoft/eslint-config/node` | Node.js rules and globals |
+| `@byndyusoft/eslint-config/jest` | Jest rules |
+| `@byndyusoft/eslint-config/jest-style-frontend` | Frontend Jest style overrides |
+| `@byndyusoft/eslint-config/vitest` | Vitest rules and globals for test files |
+| `@byndyusoft/eslint-config/react` | React, hooks, and accessibility rules |
+| `@byndyusoft/eslint-config/react-testing` | Testing Library and jest-dom rules |
+| `@byndyusoft/eslint-config/typescript-style-backend` | Backend TypeScript style rules |
+| `@byndyusoft/eslint-config/typescript-style-frontend` | Frontend TypeScript style overrides |
+| `@byndyusoft/eslint-config/header-apache-2.0` | Apache 2.0 license header rule |
+
+Each entry point exports an ESLint flat config array. `backend` and `frontend` are complete presets. The other entries are building blocks: combine them with `defineConfig(...)` in the order needed by your project. For example, `typescript-style-frontend` adds rules to `typescript`, and `jest-style-frontend` adds rules to `jest`; neither style preset is intended to be used alone. Files inside `configs/` and `utils/` are internal and are not public imports.
+
+### Extending a preset
+
+```js
+import { defineConfig } from 'eslint/config';
+import backend from '@byndyusoft/eslint-config/backend';
+
+export default defineConfig(...backend, {
+    rules: {
+        'no-console': 'off'
+    }
+});
+```
+
+## Migration from v3
+
+v4 is a **breaking** release. Main changes:
+
+| v3 | v4 |
+|----|-----|
+| `.eslintrc` + `"extends"` | `eslint.config.js` + `import` |
+| ESLint 8.x | ESLint 10.x |
+| eslintrc format | flat config only |
+| `import/*`, `react/*`, `jsx-a11y/*` rules | `import-x/*`, `@eslint-react/*`, `react-a11y/*` rules |
+| `@byndyusoft/eslint-config/flow` | Removed (Flow plugin incompatible with ESLint 10) |
+| `@byndyusoft/eslint-config/stylistic` | Removed (ESLint core stylistic rules were removed in ESLint 9) |
+
+Use the extensionless public paths listed above. Deep imports from `configs/` or `utils/` and paths ending in `.js` are no longer supported.
+
+**Before (v3):**
 
 ```json
 {
-  "extends": [
-    "@byndyusoft/eslint-config/frontend"
-  ]
+  "extends": ["@byndyusoft/eslint-config/backend"]
 }
 ```
+
+**After (v4):**
+
+```js
+import backend from '@byndyusoft/eslint-config/backend';
+
+export default backend;
+```
+
+Additional steps for consumer projects:
+
+1. Upgrade Node.js to `^22.13.0 || >=24` and ESLint to `^10.4.0`
+2. Remove `.eslintrc.*` / `.eslintignore` (migrate ignores into `eslint.config.js`)
+3. Update IDE ESLint extension (VS Code ESLint v3+ supports flat config)
+4. Run `eslint .` and fix new violations from updated plugins (typescript-eslint 8, unicorn 65+, sonarjs 4)
 
 ## Maintainers
 
@@ -56,4 +150,3 @@ Note: If you have React project created with create-react-app, then you haven't 
 - [@Byndyusoft/team](https://github.com/orgs/Byndyusoft/teams/team)
 - [@KillWolfVlad](https://github.com/KillWolfVlad)
 - [@sadcitizen](https://github.com/sadcitizen)
-

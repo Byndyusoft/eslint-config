@@ -1,10 +1,7 @@
-module.exports = {
-    extends: [
-        './typescript.js',
-        './typescript-style-frontend.js',
-        './jest.js',
-        './jest-style-frontend.js',
-        './react.js',
-        './react-testing.js'
-    ]
-};
+import { defineConfig } from 'eslint/config';
+import typescript from './typescript.js';
+import typescriptStyleFrontend from './typescript-style-frontend.js';
+import react from './react.js';
+import reactTesting from './react-testing.js';
+
+export default defineConfig(...typescript, ...typescriptStyleFrontend, ...react, ...reactTesting);
