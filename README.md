@@ -21,7 +21,7 @@ For TypeScript projects, also install TypeScript:
 npm i -D typescript
 ```
 
-React and Jest projects also need their own React and Jest dependencies and type declarations. The presets configure ESLint; they do not install the application framework or test runner for you.
+React, Jest, and Vitest projects also need their own framework or test runner dependencies and any required type declarations. The presets configure ESLint; they do not install the application framework or test runner for you.
 
 ## Usage
 
@@ -49,13 +49,27 @@ export default backend;
 
 ### Frontend
 
-**React + TypeScript/JavaScript + Jest**
+**React + TypeScript/JavaScript**
 
 ```js
 import frontend from '@byndyusoft/eslint-config/frontend';
 
 export default frontend;
 ```
+
+### Vitest
+
+Combine the `vitest` preset with your JavaScript, TypeScript, or frontend preset:
+
+```js
+import { defineConfig } from 'eslint/config';
+import frontend from '@byndyusoft/eslint-config/frontend';
+import vitest from '@byndyusoft/eslint-config/vitest';
+
+export default defineConfig(...frontend, ...vitest);
+```
+
+The preset uses `@vitest/eslint-plugin` recommended rules with the same custom rule settings and severity levels as the Jest preset. It enables Vitest globals and applies only to `*.spec.*`, `*.test.*`, `*.tests.*`, and files inside `__tests__/`. Rules use the `vitest/*` namespace.
 
 ### Public entry points
 
@@ -70,6 +84,7 @@ export default frontend;
 | `@byndyusoft/eslint-config/node` | Node.js rules and globals |
 | `@byndyusoft/eslint-config/jest` | Jest rules |
 | `@byndyusoft/eslint-config/jest-style-frontend` | Frontend Jest style overrides |
+| `@byndyusoft/eslint-config/vitest` | Vitest rules and globals for test files |
 | `@byndyusoft/eslint-config/react` | React, hooks, and accessibility rules |
 | `@byndyusoft/eslint-config/react-testing` | Testing Library and jest-dom rules |
 | `@byndyusoft/eslint-config/typescript-style-backend` | Backend TypeScript style rules |

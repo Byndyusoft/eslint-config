@@ -39,6 +39,7 @@
 
 ### Added
 
+- Composable `vitest` preset using `@vitest/eslint-plugin` recommended rules and custom settings matching the Jest preset
 - Smoke tests for `backend` and `frontend` presets
 - Package archive consumer check and Node.js 22/24 CI
 - Explicit exports for the composable `advanced`, `node`, `jest`, `jest-style-frontend`, `react`, `react-testing`, and TypeScript style presets

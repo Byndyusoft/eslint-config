@@ -4,7 +4,9 @@ import path from 'node:path';
 import { ESLint } from 'eslint';
 
 const packageName = '@byndyusoft/eslint-config';
-const manifest = JSON.parse(readFileSync(new URL('./node_modules/@byndyusoft/eslint-config/package.json', import.meta.url)));
+const manifest = JSON.parse(
+    readFileSync(new URL('./node_modules/@byndyusoft/eslint-config/package.json', import.meta.url))
+);
 
 for (const entryPoint of Object.keys(manifest.exports)) {
     const specifier = `${packageName}${entryPoint === '.' ? '' : entryPoint.slice(1)}`;
@@ -18,6 +20,7 @@ for (const subpath of ['/flow', '/stylistic', '/backend.js', '/configs/react', '
 
 const backend = (await import(`${packageName}/backend`)).default;
 const frontend = (await import(`${packageName}/frontend`)).default;
+const vitest = (await import(`${packageName}/vitest`)).default;
 const options = { cwd: process.cwd(), overrideConfigFile: true };
 
 for (const [name, config, fileName] of [
@@ -36,7 +39,6 @@ const frontendConfig = await frontendEslint.calculateConfigForFile(path.join('sr
 
 for (const rule of [
     '@typescript-eslint/no-explicit-any',
-    'jest/no-duplicate-hooks',
     '@eslint-react/dom-no-missing-button-type',
     'react-hooks/rules-of-hooks',
     'testing-library/prefer-find-by',
@@ -45,4 +47,20 @@ for (const rule of [
     assert.ok(frontendConfig.rules[rule], `Expected active rule ${rule}`);
 }
 
-process.stdout.write(`Checked ${Object.keys(manifest.exports).length} public imports and backend/frontend linting from ${manifest.version} archive\n`);
+const vitestEslint = new ESLint({ ...options, overrideConfig: vitest });
+const [vitestResult] = await vitestEslint.lintText(
+    `
+    describe('example', () => {
+        test('compares values', () => {
+            expect(1).toBe(1);
+        });
+    });
+`,
+    { filePath: path.join('src', 'vitest.test.js') }
+);
+assert.equal(vitestResult.errorCount, 0, JSON.stringify(vitestResult.messages));
+assert.equal(vitestResult.warningCount, 0, JSON.stringify(vitestResult.messages));
+
+process.stdout.write(
+    `Checked ${Object.keys(manifest.exports).length} public imports and backend/frontend/vitest linting from ${manifest.version} archive\n`
+);

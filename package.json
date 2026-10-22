@@ -23,7 +23,8 @@
     "./react-testing": "./react-testing.js",
     "./typescript": "./typescript.js",
     "./typescript-style-backend": "./typescript-style-backend.js",
-    "./typescript-style-frontend": "./typescript-style-frontend.js"
+    "./typescript-style-frontend": "./typescript-style-frontend.js",
+    "./vitest": "./vitest.js"
   },
   "engines": {
     "node": "^22.13.0 || >=24"
@@ -60,6 +61,7 @@
     "@eslint/compat": "^2.1.1",
     "@eslint/js": "^10.0.1",
     "@tony.ganchev/eslint-plugin-header": "^3.4.4",
+    "@vitest/eslint-plugin": "^1.6.27",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-dirs": "^0.0.4",

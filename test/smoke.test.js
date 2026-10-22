@@ -6,6 +6,7 @@ import { ESLint } from 'eslint';
 import backend from '@byndyusoft/eslint-config/backend';
 import frontend from '@byndyusoft/eslint-config/frontend';
 import header from '@byndyusoft/eslint-config/header-apache-2.0';
+import vitest from '@byndyusoft/eslint-config/vitest';
 
 const rootDir = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 
@@ -23,7 +24,8 @@ const publicEntryPoints = [
     '/react-testing',
     '/typescript',
     '/typescript-style-backend',
-    '/typescript-style-frontend'
+    '/typescript-style-frontend',
+    '/vitest'
 ];
 
 const presets = [
@@ -86,6 +88,52 @@ test('frontend public import activates TypeScript, React, and testing rules', as
     ]) {
         assert.ok(config.rules[rule], `Expected ${rule} to be active`);
     }
+});
+
+test('vitest preset reports errors and warnings with test globals enabled', async () => {
+    const eslint = new ESLint({
+        overrideConfig: [...vitest, { rules: { 'no-undef': 'error' } }],
+        overrideConfigFile: true,
+        cwd: rootDir
+    });
+    const [result] = await eslint.lintText(
+        `
+        describe('example', () => {
+            beforeEach(() => {});
+            beforeEach(() => {});
+            test('compares objects', () => {
+                expect({ value: 1 }).toEqual({ value: 1 });
+            });
+        });
+    `,
+        { filePath: 'example.test.js' }
+    );
+
+    assert.ok(
+        result.messages.some((message) => message.ruleId === 'vitest/no-duplicate-hooks' && message.severity === 2)
+    );
+    assert.ok(
+        result.messages.some((message) => message.ruleId === 'vitest/prefer-strict-equal' && message.severity === 1)
+    );
+    assert.ok(!result.messages.some((message) => message.ruleId === 'no-undef'));
+});
+
+test('vitest rules compose with frontend and apply only to test files', async () => {
+    const eslint = new ESLint({
+        overrideConfig: [...frontend, ...vitest],
+        overrideConfigFile: true,
+        cwd: rootDir
+    });
+
+    for (const file of ['example.spec.tsx', 'example.test.tsx', 'example.tests.tsx', '__tests__/example.tsx']) {
+        const config = await eslint.calculateConfigForFile(path.join(rootDir, 'fixtures/frontend', file));
+        assert.ok(config.rules['@typescript-eslint/no-explicit-any']);
+        assert.equal(config.rules['vitest/no-duplicate-hooks'][0], 2);
+        assert.equal(config.rules['vitest/prefer-strict-equal'][0], 1);
+    }
+
+    const config = await eslint.calculateConfigForFile(path.join(rootDir, 'fixtures/frontend/valid.tsx'));
+    assert.ok(!Object.keys(config.rules).some((rule) => rule.startsWith('vitest/')));
 });
 
 for (const preset of presets) {
