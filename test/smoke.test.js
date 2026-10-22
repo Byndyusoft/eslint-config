@@ -69,7 +69,7 @@ test('removed and internal entry points are not exported', async () => {
     }
 });
 
-test('frontend public import activates TypeScript, Jest, React, and testing rules', async () => {
+test('frontend public import activates TypeScript, React, and testing rules', async () => {
     const eslint = new ESLint({
         overrideConfig: frontend,
         overrideConfigFile: true,
@@ -79,7 +79,6 @@ test('frontend public import activates TypeScript, Jest, React, and testing rule
 
     for (const rule of [
         '@typescript-eslint/no-explicit-any',
-        'jest/no-duplicate-hooks',
         '@eslint-react/dom-no-missing-button-type',
         'react-hooks/rules-of-hooks',
         'testing-library/prefer-find-by',
@@ -119,5 +118,5 @@ test('header preset reports a missing header', async () => {
         filePath: path.join(rootDir, 'header.js')
     });
 
-    assert.ok(results[0].messages.some(message => message.ruleId === 'header/header'));
+    assert.ok(results[0].messages.some((message) => message.ruleId === 'header/header'));
 });

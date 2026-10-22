@@ -63,7 +63,7 @@ export default frontend;
 |--------|-------------|
 | `@byndyusoft/eslint-config` | Base JavaScript config |
 | `@byndyusoft/eslint-config/backend` | Complete Node.js + TypeScript + Jest config |
-| `@byndyusoft/eslint-config/frontend` | Complete React + TypeScript + Jest config |
+| `@byndyusoft/eslint-config/frontend` | Complete React + TypeScript config |
 | `@byndyusoft/eslint-config/javascript` | Same as default |
 | `@byndyusoft/eslint-config/typescript` | JavaScript + TypeScript rules |
 | `@byndyusoft/eslint-config/advanced` | SonarJS and Unicorn rules |
