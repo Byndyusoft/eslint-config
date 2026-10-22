@@ -12,7 +12,7 @@ Shared ESLint flat config for Byndyusoft projects.
 ## Install
 
 ```shell
-npm i -D eslint@^10 @byndyusoft/eslint-config@4.0.0-alpha.0
+npm i -D eslint@^10 @byndyusoft/eslint-config@4.0.0-beta.0
 ```
 
 For TypeScript projects, also install TypeScript:

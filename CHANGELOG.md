@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.0.0-beta.0
+
+### Breaking changes
+
+- The `frontend` preset no longer includes `jest` and `jest-style-frontend`; compose these presets explicitly for Jest projects
+
+### Added
+
+- Composable `vitest` preset using `@vitest/eslint-plugin` recommended rules and custom settings matching the Jest preset
+- Tests for Vitest rule severity, test-file scoping, frontend composition, and package archive usage
+
 ## 4.0.0-alpha.0
 
 ### Breaking changes
@@ -39,7 +50,6 @@
 
 ### Added
 
-- Composable `vitest` preset using `@vitest/eslint-plugin` recommended rules and custom settings matching the Jest preset
 - Smoke tests for `backend` and `frontend` presets
 - Package archive consumer check and Node.js 22/24 CI
 - Explicit exports for the composable `advanced`, `node`, `jest`, `jest-style-frontend`, `react`, `react-testing`, and TypeScript style presets

@@ -1,4 +1,4 @@
-# Release checklist for v4.0.0-alpha.0
+# Release checklist for v4.0.0-beta.0
 
 ## Pre-release validation
 
@@ -11,7 +11,7 @@ HUSKY=0 npm pack --dry-run
 
 The Node.js 22/24 CI workflow also installs the archive into a clean consumer with strict peer dependency checks. Review its result before any release.
 
-Local validation on 2026-10-02 passed on Node.js 22.23.1 and 24.18.0: smoke tests, lint, archive imports, and strict installation into a separate consumer. The GitHub workflow will run after these changes are pushed.
+Historical alpha validation on 2026-10-02 passed on Node.js 22.23.1 and 24.18.0: smoke tests, lint, archive imports, and strict installation into a separate consumer. Re-run the checks above for the beta release and review the current CI results.
 
 ## Local consumer pilots
 
@@ -24,22 +24,30 @@ On 2026-10-02, the unpublished archive was applied without changing the consumer
 
 The backend sample uses explicit `.ts` imports under NodeNext. The preset warns through `import-x/extensions`; this project needs an override if it keeps that import style. Its nested `src/package.json` declares only `"type": "module"`, so `n/no-extraneous-import` reports dependencies declared in the parent package. The frontend sample's two errors are from `react-hooks/immutability` on a hook that mutates a DOM element received as an argument. These findings need consumer-side review during migration; the pilot did not lint either entire project.
 
-`byndyusoft-ui` currently uses ESLint 8 and the v2 config, and its project instructions specify Node.js 20. It must update those requirements before adopting this alpha.
+At the time of the pilot, `byndyusoft-ui` used ESLint 8 and the v2 config, and its project instructions specified Node.js 20. Those requirements must be updated before adopting v4.
 
 ## Future publication (requires separate approval)
 
 ```shell
-npm publish --access public --tag alpha
+npm publish --access public --tag beta
 ```
 
 Requires npm login with publish rights to `@byndyusoft/eslint-config`.
 
+Verify the published beta:
+
+```shell
+npm view @byndyusoft/eslint-config@beta version
+```
+
+The expected version is `4.0.0-beta.0`. The `beta` dist-tag keeps the stable `latest` release unchanged.
+
 ## GitHub Release
 
 ```shell
-git tag v4.0.0-alpha.0
-git push origin v4.0.0-alpha.0
-gh release create v4.0.0-alpha.0 --prerelease --title "v4.0.0-alpha.0" --notes-file CHANGELOG.md
+git tag v4.0.0-beta.0
+git push origin v4.0.0-beta.0
+gh release create v4.0.0-beta.0 --prerelease --title "v4.0.0-beta.0" --notes-file CHANGELOG.md
 ```
 
 ## Consumer rollout after release
